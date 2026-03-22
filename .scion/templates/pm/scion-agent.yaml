@@ -1,0 +1,3 @@
+schema_version: "1"
+description: "appteam pm agent template"
+system_prompt: system-prompt.md

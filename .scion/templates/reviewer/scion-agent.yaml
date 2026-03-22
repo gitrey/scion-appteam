@@ -1,0 +1,3 @@
+schema_version: "1"
+description: "appteam reviewer agent template"
+system_prompt: system-prompt.md

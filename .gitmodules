@@ -1,3 +1,6 @@
 [submodule "appteam"]
 	path = appteam
 	url = https://github.com/ahafin/appteam.git
+[submodule "scion"]
+	path = scion
+	url = https://github.com/GoogleCloudPlatform/scion.git

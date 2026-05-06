@@ -31,46 +31,33 @@ Review), `scion-appteam`:
 
 ## 🏗️ Team Architecture & Workflow
 
-The project simulates a complete agile lifecycle through specialized agent
-personas interacting via defined messaging interfaces:
+The project simulates a complete agile lifecycle through specialized agent personas interacting via defined messaging interfaces and JIRA:
 
 ```mermaid
 graph TD
-    PO[Product Owner] --> PM[Product Manager]
-    
-    subgraph "Planning & Requirements"
-        PM --> Spec["docs/specs/"]
-        PM --> TPM[Technical Product Manager]
-        TPM --> Backlog["docs/BACKLOG.md"]
-    end
-    
-    subgraph "Implementation & Verification"
-        TPM --> SWE1[SWE-1]
-        TPM --> SWE2[SWE-2]
-        SWE1 --> Codebase[Workspace Code]
-        SWE2 --> Codebase
-        Codebase --> Test[SWE-Test]
-    end
-    
-    subgraph "Quality Assurance & Release"
-        Test --> Reviewer[Reviewer]
-        Reviewer --> Release["docs/RELEASENOTES.md"]
-    end
+    PO["👤 Product Owner (PO)"] -->|1. Backlog Management| JIRA[("JIRA Board (Atlassian MCP)")]
+    PO -->|2. Initiates /story or /groom| PM["📋 Product Manager"]
+    PM -->|3. Creates Spec linked to JIRA ID| Spec[("docs/specs/")]
+    PM -->|4. Syncs priority| TPM["⚙️ Technical Product Manager"]
+    TPM -->|5. Populates docs/BACKLOG.md with JIRA ID| Backlog[("docs/BACKLOG.md")]
+    TPM -->|6. Assigns Tasks| SWE1["💻 SWE-1"]
+    TPM -->|6. Assigns Tasks| SWE2["💻 SWE-2"]
+    SWE1 -->|7. Transitions JIRA & Writes Code| Codebase["🛠️ Workspace Code"]
+    SWE2 -->|7. Transitions JIRA & Writes Code| Codebase
+    Codebase -->|8. Verifies Acceptance Criteria| Test["🧪 SWE-Test"]
+    Test -->|9. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
+    PR -->|10. Reviews, Merges & Closes JIRA| Reviewer["🔍 Reviewer"]
+    Reviewer -->|11. Releases milestone| Release["📄 docs/RELEASENOTES.md"]
 ```
 
 ### 👥 The Personas
 
-1. **📋 Product Manager (PM)**: Bridges the PO's feedback/requests and the
-   technical team. Focuses on creating specs under `docs/specs/` and detailing
-   acceptance criteria.
-2. **⚙️ Technical Product Manager (TPM)**: Manages `docs/BACKLOG.md` and
-   orchestrates SWE assignments, priority, and task completion.
-3. **💻 Software Engineers (SWE-1 & SWE-2)**: Specialize in direct codebase
-   implementation, resolving requirements according to approved specs.
-4. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit,
-   integration, and end-to-end tests to verify acceptance criteria.
-5. **🔍 Reviewer**: Performs comprehensive code reviews and grants approval
-   before changes are finalized.
+1. **👤 Product Owner (PO)**: Manages the JIRA backlog, creates and grooms issues using native Atlassian MCP tools, and represents the voice of business/stakeholders.
+2. **📋 Product Manager (PM)**: Bridges the PO's feedback/requests and the technical team. Focuses on creating specs under `docs/specs/` and detailing acceptance criteria.
+3. **⚙️ Technical Product Manager (TPM)**: Manages `docs/BACKLOG.md` and orchestrates SWE assignments, priority, and task completion.
+4. **💻 Software Engineers (SWE-1 & SWE-2)**: Specialize in direct codebase implementation, resolving requirements according to approved specs on feature branches, and opening PRs via `gh` CLI.
+5. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
+6. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and merges Pull Requests via `gh` CLI, transitioning corresponding JIRA issues to Done.
 
 ---
 
@@ -80,13 +67,15 @@ graph TD
 scion-appteam/
 ├── .scion/                  // Scion orchestration settings
 │   └── templates/           // Agent templates & custom prompts
+│       ├── po/              // Product Owner configuration, system prompt & JIRA skills
+│       │   └── skills/      // PO JIRA skills (/story, /groom)
 │       ├── pm/              // Product Manager configurations & skills
 │       ├── reviewer/        // Reviewer configurations & skills
 │       ├── swe-1/           // Software Engineer 1 configurations & skills
 │       ├── swe-2/           // Software Engineer 2 configurations & skills
 │       ├── swe-test/        // QA/Testing configurations & skills
 │       └── tpm/             // Technical Product Manager configurations & skills
-├── docs/                    // Shared documentation & agile tracking (to be created)
+├── docs/                    // Shared documentation & agile tracking
 │   ├── specs/               // Feature specifications & requirements
 │   ├── adr/                 // Architecture Decision Records
 │   ├── BACKLOG.md           // Global product backlog
@@ -99,18 +88,14 @@ scion-appteam/
 
 ## 🛠️ Key Agent Skills
 
-Each agent template is equipped with specialized `/` skills designed to automate
-common software processes:
+Each agent template is equipped with specialized `/` skills designed to automate common software processes:
 
-- **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and
-  initiates the structured workflow in dedicated execution panes.
-- **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture
-  Decision Records under `docs/adr/` with standard templates.
-- **`/regenerate`** (PM): Reads project configurations from
-  `.appteam/settings.json` and automatically regenerates template structures
-  while preserving core tracking files.
-- **`/release`** (PM): Automates release note aggregation and version tagging
-  upon milestone completion.
+- **`/story`** (PO): Automates creation of highly-structured JIRA stories and bugs with testable acceptance criteria via the Atlassian MCP server.
+- **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing ticket descriptions, and refining priorities dynamically.
+- **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and initiates the structured workflow in dedicated execution panes.
+- **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture Decision Records under `docs/adr/` with standard templates.
+- **`/regenerate`** (PM): Reads project configurations from `.appteam/settings.json` and automatically regenerates template structures while preserving core tracking files.
+- **`/release`** (PM): Automates release note aggregation and version tagging upon milestone completion.
 
 ---
 

@@ -33,10 +33,22 @@ You are the Code Reviewer for the appteam project. You review all code changes f
 ## Workflow
 
 1. Read the relevant spec in docs/specs/ for acceptance criteria
-2. Review the diff on the feature branch
+2. Locate and check out the Pull Request using GitHub CLI:
+   ```bash
+   gh pr list
+   gh pr diff <pr-number>
+   ```
 3. Check all items on the review checklist
-4. If issues found: report to the implementing SWE with specific feedback
-5. If approved: confirm to TPM that the code is ready to merge
+4. If issues found: request changes with specific feedback:
+   ```bash
+   gh pr review <pr-number> --request-changes --comment "Please fix: <feedback>"
+   ```
+5. If approved: approve and automatically merge the Pull Request:
+   ```bash
+   gh pr review <pr-number> --approve --comment "LGTM! All checklist items passed."
+   gh pr merge <pr-number> --merge --delete-branch --auto
+   ```
+   Confirm to TPM that the PR has been successfully approved and merged.
 
 ## Rules
 

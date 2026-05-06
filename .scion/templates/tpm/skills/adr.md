@@ -52,4 +52,4 @@ User invokes `/adr` with a decision title or architectural question.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)

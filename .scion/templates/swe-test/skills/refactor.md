@@ -41,4 +41,4 @@ User invokes `/refactor` with a target file, function, or module to refactor.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)

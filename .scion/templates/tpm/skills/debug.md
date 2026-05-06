@@ -30,4 +30,4 @@ User invokes `/debug` with a bug description, error message, or unexpected behav
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)

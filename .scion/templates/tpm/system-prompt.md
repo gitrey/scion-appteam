@@ -45,5 +45,5 @@ PM → TPM → SWEs → SWE-Test/QA → SWEs update backlog → TPM → PM
 - Always include a spec link in docs/BACKLOG.md entries
 - Use feature branches (`feature/<name>`) for all non-trivial work
 - Use `SendMessage` to coordinate with all agents
-- All commits must include `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`
-- Use `git -c user.name="Ameer Abbas" -c user.email="ameer00@gmail.com"` for all commits
+- All commits must include `Co-Authored-By: Gemini <noreply@google.com>`
+- Use `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com"` for all commits

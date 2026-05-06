@@ -45,4 +45,4 @@ User invokes `/security` with a target file, module, or the entire project to au
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)

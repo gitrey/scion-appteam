@@ -41,4 +41,4 @@ User invokes `/api-design` with a resource name or feature that needs an API.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)

@@ -18,11 +18,11 @@ User invokes `/pipeline` with a feature description or milestone name.
    - **Task 3+:** SWE — Implement the feature (one task per work item)
    - **Task N:** SWE-Test — Run tests and verify acceptance criteria
    - **Task N+1:** Reviewer — Code review (if reviewer agent exists)
-3. **Spawn agents** — Use the `Agent` tool with `team_name` parameter to launch each agent in its own tmux pane. Always use model `claude-opus-4-6` for all agents:
-   - PM agent (reads `.claude/agents/pm.md`)
-   - TPM agent (reads `.claude/agents/tpm.md`)
-   - SWE-1 agent (reads `.claude/agents/swe-1.md`)
-   - SWE-2 agent (reads `.claude/agents/swe-2.md`)
+3. **Spawn agents** — Use the `Agent` tool with `team_name` parameter to launch each agent in its own tmux pane. Always use model `gemini-3.1-flash-lite-preview` for all agents:
+   - PM agent (reads `.gemini/agents/pm.md`)
+   - TPM agent (reads `.gemini/agents/tpm.md`)
+   - SWE-1 agent (reads `.gemini/agents/swe-1.md`)
+   - SWE-2 agent (reads `.gemini/agents/swe-2.md`)
    - SWE-Test agent (if included)
 4. **Assign tasks** — Use `TaskUpdate` with `owner` set to each agent's name
 5. **Follow the mandatory pipeline:**
@@ -35,7 +35,7 @@ User invokes `/pipeline` with a feature description or milestone name.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
-- **Model:** `claude-opus-4-6`
-- **Agent definitions:** `.claude/agents/`
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Model:** `gemini-3.1-flash-lite-preview`
+- **Agent definitions:** `.gemini/agents/`
 - **Pipeline diagram:** `docs/PIPELINE.md`

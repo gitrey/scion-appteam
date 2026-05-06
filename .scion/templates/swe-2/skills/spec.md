@@ -32,7 +32,7 @@ User invokes `/spec` with a feature title or description.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
 - **Specs directory:** `docs/specs/`
 - **Spec template:** `docs/specs/TEMPLATE.md`
 - **Backlog:** `docs/BACKLOG.md`

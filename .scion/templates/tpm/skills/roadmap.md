@@ -33,5 +33,5 @@ User invokes `/roadmap` with a feature idea or description.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
 - **Backlog:** `docs/BACKLOG.md`

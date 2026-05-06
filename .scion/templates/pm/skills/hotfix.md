@@ -7,7 +7,8 @@ description: Emergency fix workflow
 
 ## Trigger
 
-User invokes `/hotfix` with a critical bug description that needs an immediate fix.
+User invokes `/hotfix` with a critical bug description that needs an immediate
+fix.
 
 ## Instructions
 
@@ -16,16 +17,19 @@ User invokes `/hotfix` with a critical bug description that needs an immediate f
    git checkout main && git pull
    git checkout -b hotfix/<description>
    ```
-2. **Implement the minimal fix** — Make the smallest change possible that resolves the issue. No feature work, no refactoring, no cleanup — only the fix
-3. **Write a test** — Add a test that reproduces the original bug and verifies the fix
+2. **Implement the minimal fix** — Make the smallest change possible that
+   resolves the issue. No feature work, no refactoring, no cleanup — only the
+   fix
+3. **Write a test** — Add a test that reproduces the original bug and verifies
+   the fix
 4. **Run all tests** — Ensure nothing else is broken:
    ```
    go test ./...
    ```
 5. **Commit the fix:**
    ```
-   git -c user.name="Ameer Abbas" -c user.email="ameer00@gmail.com" add -A
-   git -c user.name="Ameer Abbas" -c user.email="ameer00@gmail.com" commit -m "hotfix: <description>"
+   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add -A
+   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" commit -m "hotfix: <description>"
    ```
 6. **Merge to main:**
    ```
@@ -34,15 +38,16 @@ User invokes `/hotfix` with a critical bug description that needs an immediate f
    ```
 7. **Tag a patch release** — Bump the patch version:
    ```
-   git -c user.name="Ameer Abbas" -c user.email="ameer00@gmail.com" tag -a vX.Y.Z -m "Hotfix: <description>"
+   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" tag -a vX.Y.Z -m "Hotfix: <description>"
    ```
 8. **Push everything:**
    ```
    git push origin main && git push origin vX.Y.Z
    ```
-9. **Report back** — Confirm: what was fixed, the hotfix branch name, the new tag, and that all tests pass
+9. **Report back** — Confirm: what was fixed, the hotfix branch name, the new
+   tag, and that all tests pass
 
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)

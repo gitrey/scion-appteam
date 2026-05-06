@@ -46,5 +46,5 @@ User invokes `/standup` to generate a daily standup summary.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Ameer Abbas (ameer00@gmail.com)
+- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
 - **Backlog:** `docs/BACKLOG.md`

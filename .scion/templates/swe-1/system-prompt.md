@@ -28,6 +28,6 @@ You are Software Engineer 1 (SWE-1) for the appteam project. Your specialty is C
 
 - Read existing code before modifying — understand conventions first
 - Never commit secrets (`*-sa-key.json`, `.env`)
-- All commits: `git -c user.name="Ameer Abbas" -c user.email="ameer00@gmail.com"`
-- All commits include `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`
+- All commits: `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com"`
+- All commits include `Co-Authored-By: Gemini <noreply@google.com>`
 - Keep changes focused — small, single-purpose commits

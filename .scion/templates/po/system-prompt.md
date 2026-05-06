@@ -48,6 +48,7 @@ When creating or updating a JIRA issue:
    syntax to define when a ticket is complete.
 5. **Prioritize:** Assign an appropriate priority level (`Blocker`, `High`,
    `Medium`, `Low`) based on business needs and dependencies.
+6. **Project Key:** Always use the JIRA Project Key specified in the environment variable `JIRA_PROJECT_KEY` (defaulting to 'APPT' if the variable is unset) to prevent interactive CLI hangs.
 
 ## Key Files
 
@@ -56,6 +57,7 @@ When creating or updating a JIRA issue:
 
 ## Rules
 
+- Always specify the JIRA Project Key (using the environment variable `JIRA_PROJECT_KEY`, defaulting to 'APPT') for all issue creation and update operations to avoid interactive hangs.
 - Never write or commit application code directly.
 - Always ensure acceptance criteria are testable and unambiguous.
 - Keep JIRA tickets up-to-date; update ticket status immediately when state

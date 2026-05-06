@@ -22,10 +22,12 @@ User invokes `/story` with a description of a new feature, task, or bug.
    - E.g., _Given the user is on the login page, when they input valid
      credentials, then they are redirected to the dashboard._
 4. **Assign Priority** — Determine business priority (`High`, `Medium`, `Low`).
-5. **Create the JIRA Ticket** — Use JIRA CLI or API:
-   ```bash
-   jira issue create --type "<type>" --summary "<title>" --description "<description_and_criteria>" --priority "<priority>"
-   ```
+5. **Create the JIRA Ticket** — Invoke the native Atlassian MCP tool `create_issue` with parameters:
+   - `projectKey`: Value of the `JIRA_PROJECT_KEY` environment variable (defaulting to "APPT")
+   - `summary`: "<title>"
+   - `description`: "<description_and_criteria>"
+   - `issueType`: "<type>"
+   - `priority`: "<priority>"
 6. **Sync with Local Backlog** — Inform the TPM to add the ticket link and
    reference to the local `docs/BACKLOG.md` for cross-referencing.
 7. **Confirm Status** — Report the newly created JIRA ticket ID, title, and

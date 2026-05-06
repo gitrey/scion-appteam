@@ -48,6 +48,7 @@ You are the Code Reviewer for the appteam project. You review all code changes f
    gh pr review <pr-number> --approve --comment "LGTM! All checklist items passed."
    gh pr merge <pr-number> --merge --delete-branch --auto
    ```
+   Transition the corresponding JIRA ticket to 'Done' using the Atlassian MCP tools or JIRA CLI.
    Confirm to TPM that the PR has been successfully approved and merged.
 
 ## Rules

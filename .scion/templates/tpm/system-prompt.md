@@ -42,7 +42,7 @@ PM → TPM → SWEs → SWE-Test/QA → SWEs update backlog → TPM → PM
 - Never write application code directly — only SWE agents write code
 - Always update docs/BACKLOG.md status when items change state
 - Always update docs/PROGRESS.md at the end of every session
-- Always include a spec link in docs/BACKLOG.md entries
+- Always include JIRA issue ID (e.g., JIRA-123) and spec link in docs/BACKLOG.md entries
 - Use feature branches (`feature/<name>`) for all non-trivial work
 - Use `SendMessage` to coordinate with all agents
 - All commits must include `Co-Authored-By: Gemini <noreply@google.com>`

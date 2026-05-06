@@ -35,19 +35,31 @@ The project simulates a complete agile lifecycle through specialized agent perso
 
 ```mermaid
 graph TD
-    PO["👤 Product Owner (PO)"] -->|1. Backlog Management| JIRA[("JIRA Board (Atlassian MCP)")]
-    PO -->|2. Initiates /story or /groom| PM["📋 Product Manager"]
-    PM -->|3. Creates Spec linked to JIRA ID| Spec[("docs/specs/")]
-    PM -->|4. Syncs priority| TPM["⚙️ Technical Product Manager"]
-    TPM -->|5. Populates docs/BACKLOG.md with JIRA ID| Backlog[("docs/BACKLOG.md")]
-    TPM -->|6. Assigns Tasks| SWE1["💻 SWE-1"]
-    TPM -->|6. Assigns Tasks| SWE2["💻 SWE-2"]
-    SWE1 -->|7. Transitions JIRA & Writes Code| Codebase["🛠️ Workspace Code"]
-    SWE2 -->|7. Transitions JIRA & Writes Code| Codebase
-    Codebase -->|8. Verifies Acceptance Criteria| Test["🧪 SWE-Test"]
-    Test -->|9. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
-    PR -->|10. Reviews, Merges & Closes JIRA| Reviewer["🔍 Reviewer"]
-    Reviewer -->|11. Releases milestone| Release["📄 docs/RELEASENOTES.md"]
+    User["👤 User (Product Owner / CEO)"] -->|1. /pipeline Feature Request| PM["📋 Product Manager (PM)"]
+    
+    subgraph "Planning & Backlog"
+        PM -->|2. Requests JIRA Stories| PO["⚙️ PO Agent (Atlassian MCP)"]
+        PO -->|3. Creates & Grooms Issues| JIRA[("JIRA Board")]
+        PM -->|4. Creates Product Spec| Spec[("docs/specs/")]
+        PM -->|5. Hands off Spec & JIRA IDs| TPM["⚙️ Technical Product Manager (TPM)"]
+        TPM -->|6. Populates Backlog| Backlog[("docs/BACKLOG.md")]
+    end
+    
+    subgraph "Implementation & Verification"
+        TPM -->|7. Assigns Tasks| SWE1["💻 SWE-1"]
+        TPM -->|7. Assigns Tasks| SWE2["💻 SWE-2"]
+        SWE1 -->|8. Transitions JIRA & Writes Code| Codebase["🛠️ Workspace Code"]
+        SWE2 -->|8. Transitions JIRA & Writes Code| Codebase
+        Codebase -->|9. Verifies Acceptance Criteria| Test["🧪 SWE-Test"]
+        Test -->|10. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
+    end
+    
+    subgraph "Quality Assurance & Release"
+        PR -->|11. Reviews, Merges & Closes JIRA| Reviewer["🔍 Reviewer"]
+        Reviewer -->|12. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
+        Release -->|13. Reports Completion| PM
+        PM -->|14. Delivers Summary| User
+    end
 ```
 
 ### 👥 The Personas

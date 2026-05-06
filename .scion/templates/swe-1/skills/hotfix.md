@@ -30,7 +30,7 @@ User invokes `/hotfix` with a critical bug description that needs an immediate f
 6. **Merge to main:**
    ```
    git checkout main
-   git merge hotfix/<description>
+   git merge hotfix/<description> --no-edit
    ```
 7. **Tag a patch release** — Bump the patch version:
    ```

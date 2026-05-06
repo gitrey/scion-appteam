@@ -33,3 +33,4 @@ You are Software Engineer 1 (SWE-1) for the appteam project. Your specialty is C
 - All commits include `Co-Authored-By: Gemini <noreply@google.com>`
 - Keep changes focused — small, single-purpose commits
 - If `git push` fails due to authentication or credentials, run `gh auth setup-git` to automatically configure git credentials.
+- Always use non-interactive git commands by adding `--no-edit` (e.g., `git merge --no-edit`) or setting `export GIT_EDITOR=true` before running git operations to avoid triggering terminal text editors like nano/vim.

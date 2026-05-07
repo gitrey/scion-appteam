@@ -82,25 +82,20 @@ graph TD
 
 ### 👥 The Personas
 
-1. **👤 Product Owner (PO)**: Manages the JIRA backlog, creates and grooms
-   issues using native Atlassian MCP tools, and represents the voice of
-   business/stakeholders.
-2. **📋 Product Manager (PM)**: Bridges the PO's feedback/requests and the
-   technical team. Focuses on creating specs under `docs/specs/` and detailing
-   acceptance criteria.
-3. **⚙️ Technical Product Manager (TPM)**: Manages `docs/BACKLOG.md` and
-   orchestrates SWE assignments, priority, and task completion.
-4. **💻 Software Engineer 1 (swe-1)**: Specializes in CLI, Wizard, interactive prompts, and input validation on feature branches.
-5. **💻 Software Engineer 2 (swe-2)**: Specializes in text/template rendering, file generation, and data structures on feature branches.
-6. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
-7. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser testing, DOM/CSS inspection, visual verification, and screenshot audits using the Chrome DevTools MCP.
-8. **⚡ Performance Testing Engineer Agent (perf-test)**: Specializes in concurrent traffic simulation (Locust), scalability audits, response time/latency profiling (p50, p95, p99), and performance metrics reporting.
-9. **🛡️ AppSec & SecOps Agent (secops)**: Specializes in Static Application Security Testing (SAST via `gosec`/`semgrep`), dependency vulnerability audits (SCA via `govulncheck`), and secret scanning.
-10. **📊 Database & Data Specialist Agent (db)**: Specializes in relational database schema design (DDL), generating realistic test seed/sample data datasets (DML), database migrations, and query optimization.
-11. **📈 Technical Writer Agent (doc)**: Specializes in generating and maintaining OpenAPI/Swagger schemas (`openapi.yaml`), interactive component diagrams (Mermaid), and architectural wikis.
-12. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
-13. **📊 Site Reliability Engineer Agent (sre)**: Specializes in post-deployment liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP alerting policies via Terraform, and documenting SLOs/SLIs.
-14. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
+1. **📋 Product Manager (PM)**: The primary entry point for users; drafts product specs and orchestrates the high-level pipeline.
+2. **👤 Product Owner (PO)**: Manages the JIRA backlog, translating specs from the PM into JIRA stories using native Atlassian MCP tools.
+3. **📊 Database & Data Specialist Agent (db)**: Designs logical DDL schemas and generates test seed data (DML) once specs are approved and before tasks are assigned.
+4. **⚙️ Technical Product Manager (TPM)**: Breaks down specs, database schemas, and JIRA IDs into granular tasks in `docs/BACKLOG.md` and coordinates assignments.
+5. **💻 Software Engineer 1 (swe-1)**: Specializes in CLI, Wizard, interactive prompts, and input validation on feature branches.
+6. **💻 Software Engineer 2 (swe-2)**: Specializes in text/template rendering, file generation, and data structures on feature branches.
+7. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
+8. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser testing, DOM/CSS inspection, visual verification, and screenshot audits using the Chrome DevTools MCP.
+9. **⚡ Performance Testing Engineer Agent (perf-test)**: Specializes in concurrent traffic simulation (Locust), scalability audits, response time/latency profiling (p50, p95, p99), and performance metrics reporting.
+10. **🛡️ AppSec & SecOps Agent (secops)**: Specializes in Static Application Security Testing (SAST via `gosec`/`semgrep`), dependency vulnerability audits (SCA via `govulncheck`), and secret scanning.
+11. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
+12. **📈 Technical Writer Agent (doc)**: Specializes in generating and maintaining OpenAPI/Swagger schemas (`openapi.yaml`), interactive component diagrams (Mermaid), and architectural wikis upon PR review.
+13. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
+14. **📊 Site Reliability Engineer Agent (sre)**: Specializes in post-deployment liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP alerting policies via Terraform, and documenting SLOs/SLIs.
 
 ---
 

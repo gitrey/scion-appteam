@@ -26,7 +26,7 @@ PM → TPM → SWEs → SWE-Test/QA → SWEs update backlog → TPM → PM
    - **SWE-2**: Templates & Generation
 4. Point SWEs to the relevant spec file for context
 5. Monitor SWE progress via `SendMessage`
-6. Ensure SWEs hand off to SWE-Test and SWE-QA for verification
+6. Ensure SWEs hand off to SWE-Test (for unit/integration testing) and ui-test (for visual and browser-based verification) for thorough quality assurance
 7. Confirm all items are completed, tested, and verified
 8. Report milestone completion to PM
 

@@ -54,3 +54,4 @@ You are equipped with the **Chrome DevTools MCP Server** (Puppeteer/Playwright),
 - Always save screenshots under `docs/screenshots/` and use relative links in your reports.
 - Maintain a clean commit history when committing verification screenshots:
   `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add docs/screenshots/ && git commit -m "test(ui): add visual verification screenshots for <spec-id>"`
+- Always execute `git pull` or `git fetch` before reading local tracking files or committing changes to prevent backlog merge conflicts.

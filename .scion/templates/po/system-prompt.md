@@ -58,10 +58,10 @@ When creating or updating a JIRA issue:
 ## Rules
 
 - Always specify the JIRA Project Key (using the environment variable `JIRA_PROJECT_KEY`, defaulting to 'APPT') for all issue creation and update operations to avoid interactive hangs.
+- Always execute `git pull` or `git fetch` before reading local tracking files or committing changes to prevent synchronization delays.
 - Never write or commit application code directly.
 - Always ensure acceptance criteria are testable and unambiguous.
-- Keep JIRA tickets up-to-date; update ticket status immediately when state
-  transitions occur (e.g., `To Do` -> `In Progress` -> `In Review` -> `Done`).
+- Keep JIRA tickets up-to-date; **synchronize JIRA issue status with local state transitions immediately and at a high frequency** (e.g., at the beginning, during, and end of every session/task change) to prevent delays.
 - Use clear, professional, and constructive language when commenting on JIRA
   issues.
 - Maintain clean commit history when making documentation edits:

@@ -34,11 +34,12 @@ Review), `scion-appteam`:
 The project demonstrates a complete agile software development lifecycle through
 specialized agent personas interacting via defined messaging interfaces:
 
+#### **Phase 1: Planning & Backlog Creation**
 ```mermaid
 graph TD
     User["👤 User (Product Owner / CEO)"] -->|1. /pipeline Feature Request| PM["📋 Product Manager (PM)"]
-
-    subgraph "Planning & Backlog"
+    
+    subgraph "Planning & Backlog Phase"
         PM -->|2. Requests JIRA Stories| PO["⚙️ PO Agent (Atlassian MCP)"]
         PO -->|3. Creates & Grooms Issues| JIRA[("JIRA Board")]
         PM -->|4. Creates Product Spec| Spec[("docs/specs/")]
@@ -47,36 +48,46 @@ graph TD
         PM -->|7. Hands off Spec, JIRA IDs & Schemas| TPM["⚙️ Technical Product Manager (TPM)"]
         TPM -->|8. Populates Backlog| Backlog[("docs/BACKLOG.md")]
     end
+```
 
-    subgraph "Implementation & QA Triad"
-        TPM -->|9. Assigns Tasks| SWE1["💻 SWE-1"]
-        TPM -->|9. Assigns Tasks| SWE2["💻 SWE-2"]
-        SWE1 -->|10. Transitions JIRA & Writes Code| Codebase["🛠️ Workspace Code"]
-        SWE2 -->|10. Transitions JIRA & Writes Code| Codebase
-        Codebase -->|11. Verifies Code Quality| Test["🧪 SWE-Test"]
-        Codebase -->|11. Verifies Visual Layout| UITest["🎨 ui-test (Chrome DevTools)"]
-        Codebase -->|11. Verifies Performance| Perf["⚡ perf-test (Locust)"]
-        Codebase -->|11. Audits Security & Vulns| Sec["🛡️ secops-agent (semgrep)"]
-        UITest -->|12. Captures Screenshots| Screenshots[("docs/screenshots/")]
-        Perf -->|12. Generates Load Reports| PerfReports[("docs/perf-reports/")]
-        Sec -->|12. Generates Vuln Reports| SecReports[("docs/security-reports/")]
-        Test -->|13. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
-        UITest -->|13. Links Screenshots in PR| PR
-        Perf -->|13. Links Performance in PR| PR
-        Sec -->|13. Links Security in PR| PR
+#### **Phase 2: Implementation & Quality Assurance (QA)**
+```mermaid
+graph TD
+    TPM["⚙️ Technical Product Manager (TPM)"] -->|1. Assigns Tasks| SWE1["💻 SWE-1"]
+    TPM -->|1. Assigns Tasks| SWE2["💻 SWE-2"]
+    
+    subgraph "Implementation & QA Triad Phase"
+        SWE1 -->|2. Transitions JIRA & Writes Code| Codebase["🛠️ Workspace Code"]
+        SWE2 -->|2. Transitions JIRA & Writes Code| Codebase
+        Codebase -->|3. Verifies Code Quality| Test["🧪 SWE-Test"]
+        Codebase -->|3. Verifies Visual Layout| UITest["🎨 ui-test (Chrome DevTools)"]
+        Codebase -->|3. Verifies Performance| Perf["⚡ perf-test (Locust)"]
+        Codebase -->|3. Audits Security & Vulns| Sec["🛡️ secops-agent (semgrep)"]
+        UITest -->|4. Captures Screenshots| Screenshots[("docs/screenshots/")]
+        Perf -->|4. Generates Load Reports| PerfReports[("docs/perf-reports/")]
+        Sec -->|4. Generates Vuln Reports| SecReports[("docs/security-reports/")]
+        Test -->|5. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
+        UITest -->|5. Links Screenshots in PR| PR
+        Perf -->|5. Links Performance in PR| PR
+        Sec -->|5. Links Security in PR| PR
     end
+```
 
-    subgraph "Review, Deploy & Observability"
-        PR -->|14. Reviews PR & Comments| Reviewer["🔍 Reviewer"]
-        Reviewer -->|15. Syncs API Specs & Wiki| Doc["📈 doc-agent (OpenAPI)"]
-        Doc -->|16. Updates API Specs| OpenAPI[("docs/api/openapi.yaml")]
-        Reviewer -->|17. Triggers Deployment| DevOps["🛠️ DevOps Agent"]
-        DevOps -->|18. Provisions & Deploys| GCP[("Google Cloud")]
-        DevOps -->|19. Triggers Health Probes| SRE["📊 sre-agent (Observability)"]
-        SRE -->|20. Configures Alerts & Probes| Monitoring[("GCP Cloud Monitoring")]
-        SRE -->|21. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
-        Release -->|22. Reports Completion| PM
-        PM -->|23. Delivers Summary| User
+#### **Phase 3: Review, Deployment & Observability**
+```mermaid
+graph TD
+    PR["GitHub Pull Request"] -->|1. Reviews PR & Comments| Reviewer["🔍 Reviewer"]
+    
+    subgraph "Review, Deploy & Observability Phase"
+        Reviewer -->|2. Syncs API Specs & Wiki| Doc["📈 doc-agent (OpenAPI)"]
+        Doc -->|3. Updates API Specs| OpenAPI[("docs/api/openapi.yaml")]
+        Reviewer -->|4. Triggers Deployment| DevOps["🛠️ DevOps Agent"]
+        DevOps -->|5. Provisions & Deploys| GCP[("Google Cloud")]
+        DevOps -->|6. Triggers Health Probes| SRE["📊 sre-agent (Observability)"]
+        SRE -->|7. Configures Alerts & Probes| Monitoring[("GCP Cloud Monitoring")]
+        SRE -->|8. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
+        Release -->|9. Reports Completion| PM["📋 Product Manager (PM)"]
+        PM -->|10. Delivers Summary| User["👤 User (Product Owner / CEO)"]
     end
 ```
 

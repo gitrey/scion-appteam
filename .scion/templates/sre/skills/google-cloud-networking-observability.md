@@ -51,17 +51,17 @@ description: >-
 ### 1. Tool Selection & Discovery
 
 -   **MCP Servers First**: Use
-    [Cloud Monitoring MCP](references/mcp-usage.md#cloud-monitoring-mcp),
-    [BigQuery MCP](references/mcp-usage.md#bigquery-mcp), or
-    [Cloud Logging MCP](references/mcp-usage.md#cloud-logging-mcp).
+    [Cloud Monitoring MCP](google-cloud-networking-observability/references/mcp-usage.md#cloud-monitoring-mcp),
+    [BigQuery MCP](google-cloud-networking-observability/references/mcp-usage.md#bigquery-mcp), or
+    [Cloud Logging MCP](google-cloud-networking-observability/references/mcp-usage.md#cloud-logging-mcp).
 -   **Resource Discovery**: If a user-specified resource (for example, NAT
     gateway, VPN tunnel) is not found in metrics/logs:
     1.  Use `run_shell_command` with `gcloud` to list resources in the project.
-    2.  Search [Cloud Logging MCP](references/mcp-usage.md#cloud-logging-mcp)
+    2.  Search [Cloud Logging MCP](google-cloud-networking-observability/references/mcp-usage.md#cloud-logging-mcp)
         for the resource name to find correct labels.
 -   **CLI Fallback**: Use `gcloud` or `bq` only if MCP servers are unavailable.
     DO NOT use gcloud monitoring; it is restricted. Immediately use the curl
-    templates in [metrics-analysis.md](references/metrics-analysis.md).
+    templates in [metrics-analysis.md](google-cloud-networking-observability/references/metrics-analysis.md).
 
 ### 2. Schema Verification & Error Recovery
 
@@ -79,17 +79,17 @@ For detailed SQL patterns, field definitions, and advanced troubleshooting, read
 the corresponding reference file:
 
 -   **Threat Log Analysis**:
-    [references/threat-analysis.md](references/threat-analysis.md)
+    [references/threat-analysis.md](google-cloud-networking-observability/references/threat-analysis.md)
 -   **VPC Flow Analysis**:
-    [references/vpc-flow-analysis.md](references/vpc-flow-analysis.md)
+    [references/vpc-flow-analysis.md](google-cloud-networking-observability/references/vpc-flow-analysis.md)
 -   **Cloud NAT Analysis**:
-    [references/cloud-nat-analysis.md](references/cloud-nat-analysis.md)
+    [references/cloud-nat-analysis.md](google-cloud-networking-observability/references/cloud-nat-analysis.md)
 -   **Firewall Rule Analysis**:
-    [references/firewall-analysis.md](references/firewall-analysis.md)
+    [references/firewall-analysis.md](google-cloud-networking-observability/references/firewall-analysis.md)
 -   **Networking Metrics**:
-    [references/metrics-analysis.md](references/metrics-analysis.md)
+    [references/metrics-analysis.md](google-cloud-networking-observability/references/metrics-analysis.md)
 -   **Connectivity Test Analysis**:
-    [references/connectivity-tests.md](references/connectivity-tests.md)
+    [references/connectivity-tests.md](google-cloud-networking-observability/references/connectivity-tests.md)
 
 ## Boundaries (CRITICAL)
 

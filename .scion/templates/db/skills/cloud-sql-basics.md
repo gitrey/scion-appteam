@@ -83,22 +83,22 @@ access to Cloud SQL resources.
 
 ## Reference Directory
 
--   [Core Concepts](references/core-concepts.md): Instance architecture, high
+-   [Core Concepts](cloud-sql-basics/references/core-concepts.md): Instance architecture, high
     availability (HA), and supported database engines.
 
--   [CLI Usage](references/cli-usage.md): Essential `gcloud sql` commands for
+-   [CLI Usage](cloud-sql-basics/references/cli-usage.md): Essential `gcloud sql` commands for
     instance, database, and user management.
 
--   [Client Libraries & Connectors](references/client-library-usage.md):
+-   [Client Libraries & Connectors](cloud-sql-basics/references/client-library-usage.md):
     Connecting to Cloud SQL using Python, Java, Node.js, and Go.
 
--   [MCP Usage](references/mcp-usage.md): Using the Cloud SQL remote MCP
+-   [MCP Usage](cloud-sql-basics/references/mcp-usage.md): Using the Cloud SQL remote MCP
     server and Gemini CLI extension.
 
--   [Infrastructure as Code](references/iac-usage.md): Terraform
+-   [Infrastructure as Code](cloud-sql-basics/references/iac-usage.md): Terraform
     configuration for instances, databases, and users.
 
--   [IAM & Security](references/iam-security.md): Predefined roles, SSL/TLS
+-   [IAM & Security](cloud-sql-basics/references/iam-security.md): Predefined roles, SSL/TLS
     certificates, and Auth Proxy configuration.
 
 *If you need product information not found in these references, use the

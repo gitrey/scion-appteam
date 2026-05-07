@@ -41,7 +41,16 @@ User invokes `/audit` with a specification ID to verify a feature's security (e.
      ```bash
      npm audit --json > docs/security-reports/<spec-id>-npmaudit.json
      ```
-3. **Audit Plaintext Secrets** — Search changed files or git diffs for hardcoded keys, credentials, or API tokens. Ensure `.env` and private keys are listed in `.gitignore`.
+3. **Audit Plaintext Secrets** — Search for hardcoded keys, credentials, or API tokens in both the working directory and Git history. Pay special attention to files commonly used for secrets storage (e.g., `.env`, `secrets.yaml`, `config.json`, `application.properties`).
+   - **Scan Working Directory:**
+     ```bash
+     grep -nr --exclude-dir={node_modules,vendor,.git,dist,build} "[A-Za-z0-9_.-]*[_-](key|secret|token|password|pwd|passwd|credential|auth)[=\: ]" . 2>/dev/null || true
+     ```
+   - **Scan Git History (if applicable):**
+     ```bash
+     git log --all --full-history -- "**/*" --grep="[A-Za-z0-9_.-]*[_-](key|secret|token|password|pwd|passwd|credential|auth)[=\: ]" -- 2>/dev/null || true
+     ```
+   - **Ensure `.env` and private keys are listed in `.gitignore`.**
 4. **Groom & Commit Security Reports** — Stage and commit the generated vulnerability logs:
    ```bash
    git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add docs/security-reports/

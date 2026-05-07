@@ -90,35 +90,17 @@ graph TD
    acceptance criteria.
 3. **⚙️ Technical Product Manager (TPM)**: Manages `docs/BACKLOG.md` and
    orchestrates SWE assignments, priority, and task completion.
-4. **💻 Software Engineers (SWE-1 & SWE-2)**: Specialize in direct codebase
-   implementation, resolving requirements according to approved specs on feature
-   branches, and opening PRs via `gh` CLI.
-5. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit,
-   integration, and end-to-end tests to verify acceptance criteria.
-6. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser
-   testing, DOM/CSS inspection, visual verification, and screenshot audits using
-   the Chrome DevTools MCP.
-7. **⚡ Performance Testing Engineer Agent (perf-test)**: Specializes in
-   concurrent traffic simulation (Locust), scalability audits, response
-   time/latency profiling (p50, p95, p99), and performance metrics reporting.
-8. **🛡️ AppSec & SecOps Agent (secops)**: Specializes in Static Application
-   Security Testing (SAST via `gosec`/`semgrep`), dependency vulnerability
-   audits (SCA via `govulncheck`), and secret scanning.
-9. **📊 Database & Data Specialist Agent (db)**: Specializes in relational
-   database schema design (DDL), generating realistic test seed/sample data
-   datasets (DML), database migrations, and query optimization.
-10. **📈 Technical Writer Agent (doc)**: Specializes in generating and
-    maintaining OpenAPI/Swagger schemas (`openapi.yaml`), interactive component
-    diagrams (Mermaid), and architectural wikis.
-11. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative
-    infrastructure provisioning (Terraform), container orchestration (Kubernetes
-    YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
-12. **📊 Site Reliability Engineer Agent (sre)**: Specializes in post-deployment
-    liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP
-    alerting policies via Terraform, and documenting SLOs/SLIs.
-13. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and
-    reviews Pull Requests via `gh` CLI, leaving final merges for human
-    engineers.
+4. **💻 Software Engineer 1 (swe-1)**: Specializes in CLI, Wizard, interactive prompts, and input validation on feature branches.
+5. **💻 Software Engineer 2 (swe-2)**: Specializes in text/template rendering, file generation, and data structures on feature branches.
+6. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
+7. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser testing, DOM/CSS inspection, visual verification, and screenshot audits using the Chrome DevTools MCP.
+8. **⚡ Performance Testing Engineer Agent (perf-test)**: Specializes in concurrent traffic simulation (Locust), scalability audits, response time/latency profiling (p50, p95, p99), and performance metrics reporting.
+9. **🛡️ AppSec & SecOps Agent (secops)**: Specializes in Static Application Security Testing (SAST via `gosec`/`semgrep`), dependency vulnerability audits (SCA via `govulncheck`), and secret scanning.
+10. **📊 Database & Data Specialist Agent (db)**: Specializes in relational database schema design (DDL), generating realistic test seed/sample data datasets (DML), database migrations, and query optimization.
+11. **📈 Technical Writer Agent (doc)**: Specializes in generating and maintaining OpenAPI/Swagger schemas (`openapi.yaml`), interactive component diagrams (Mermaid), and architectural wikis.
+12. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
+13. **📊 Site Reliability Engineer Agent (sre)**: Specializes in post-deployment liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP alerting policies via Terraform, and documenting SLOs/SLIs.
+14. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
 
 ---
 

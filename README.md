@@ -169,40 +169,27 @@ scion-appteam/
 Each agent template is equipped with specialized `/` skills designed to automate
 common software processes:
 
-- **`/story`** (PO): Automates creation of highly-structured JIRA stories and
-  bugs with testable acceptance criteria via the Atlassian MCP server.
-- **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing
-  ticket descriptions, and refining priorities dynamically.
-- **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser
-  interactions, capturing state screenshots via Chrome DevTools MCP.
-- **`/locust`** (perf-test): Executes headless Locust load tests simulating high
-  concurrent user traffic, profiling response time latencies (p50, p95, p99)
-  non-interactively.
-- **`/seed`** (db): Automates relational database schema design (DDL) and
-  generates rich, interconnected test seed data datasets (DML)
-  non-interactively.
-- **`/audit`** (secops): Automates static code security scans
-  (`gosec`/`semgrep`) and dependency vulnerability analysis (`govulncheck`)
-  non-interactively.
-- **`/openapi`** (doc): Scans implemented paths and models to generate and
-  synchronize OpenAPI schemas (`openapi.yaml`) and visual request sequence maps
-  automatically.
-- **`/health`** (sre): Audits deployed microservice health probes
-  (`/healthz`/`/readyz`) and automatically provisions Cloud Monitoring alert
-  policies via Terraform.
-- **`/deploy`** (devops): Builds container images, provisions GCP infrastructure
-  via Terraform, and deploys microservices to Cloud Run non-interactively.
-- **`/logs`** (devops): Automatically queries and audits application logs from
-  Cloud Run or GKE pods to isolate technical blockers.
-- **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and
-  initiates the structured workflow in dedicated execution panes.
-- **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture
-  Decision Records under `docs/adr/` with standard templates.
-- **`/regenerate`** (PM): Reads project configurations from
-  `.appteam/settings.json` and automatically regenerates template structures
-  while preserving core tracking files.
-- **`/release`** (PM): Automates release note aggregation and version tagging
-  upon milestone completion.
+#### **📋 Planning & Backlog Skills**
+- **`/story`** (PO): Automates creation of highly-structured JIRA stories and bugs with testable acceptance criteria via the Atlassian MCP server.
+- **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing ticket descriptions, and refining priorities dynamically.
+- **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and initiates the structured workflow in dedicated execution panes.
+- **`/regenerate`** (PM): Reads project configurations from `.appteam/settings.json` and automatically regenerates template structures while preserving core tracking files.
+
+#### **🧪 Quality Assurance (QA) & Security Skills**
+- **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser interactions, capturing state screenshots via Chrome DevTools MCP.
+- **`/locust`** (perf-test): Executes headless Locust load tests simulating high concurrent user traffic, profiling response time latencies (p50, p95, p99) non-interactively.
+- **`/audit`** (secops): Automates static code security scans (`gosec`/`semgrep`) and dependency vulnerability analysis (`govulncheck`) non-interactively.
+
+#### **📊 Database & Documentation Skills**
+- **`/seed`** (db): Automates relational database schema design (DDL) and generates rich, interconnected test seed data datasets (DML) non-interactively.
+- **`/openapi`** (doc): Scans implemented paths and models to generate and synchronize OpenAPI schemas (`openapi.yaml`) and visual request sequence maps automatically.
+- **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture Decision Records under `docs/adr/` with standard templates.
+- **`/release`** (PM): Automates release note aggregation and version tagging upon milestone completion.
+
+#### **🛠️ Infrastructure & Observability Skills**
+- **`/deploy`** (devops): Builds container images, provisions GCP infrastructure via Terraform, and deploys microservices to Cloud Run non-interactively.
+- **`/logs`** (devops): Automatically queries and audits application logs from Cloud Run or GKE pods to isolate technical blockers.
+- **`/health`** (sre): Audits deployed microservice health probes (`/healthz`/`/readyz`) and automatically provisions Cloud Monitoring alert policies via Terraform.
 
 ---
 

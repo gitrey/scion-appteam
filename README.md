@@ -69,7 +69,8 @@ graph TD
 3. **⚙️ Technical Product Manager (TPM)**: Manages `docs/BACKLOG.md` and orchestrates SWE assignments, priority, and task completion.
 4. **💻 Software Engineers (SWE-1 & SWE-2)**: Specialize in direct codebase implementation, resolving requirements according to approved specs on feature branches, and opening PRs via `gh` CLI.
 5. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
-6. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and merges Pull Requests via `gh` CLI, transitioning corresponding JIRA issues to Done.
+6. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser testing, DOM/CSS inspection, visual verification, and screenshot audits using the Chrome DevTools MCP.
+7. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and merges Pull Requests via `gh` CLI, transitioning corresponding JIRA issues to Done.
 
 ---
 
@@ -86,6 +87,8 @@ scion-appteam/
 │       ├── swe-1/           // Software Engineer 1 configurations & skills
 │       ├── swe-2/           // Software Engineer 2 configurations & skills
 │       ├── swe-test/        // QA/Testing configurations & skills
+│       ├── ui-test/         // UI Test Automation Agent configuration, prompt & skills
+│       │   └── skills/      // UI Test skills (/visual-verify)
 │       └── tpm/             // Technical Product Manager configurations & skills
 ├── docs/                    // Shared documentation & agile tracking
 │   ├── specs/               // Feature specifications & requirements
@@ -104,6 +107,7 @@ Each agent template is equipped with specialized `/` skills designed to automate
 
 - **`/story`** (PO): Automates creation of highly-structured JIRA stories and bugs with testable acceptance criteria via the Atlassian MCP server.
 - **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing ticket descriptions, and refining priorities dynamically.
+- **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser interactions, capturing state screenshots via Chrome DevTools MCP.
 - **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and initiates the structured workflow in dedicated execution panes.
 - **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture Decision Records under `docs/adr/` with standard templates.
 - **`/regenerate`** (PM): Reads project configurations from `.appteam/settings.json` and automatically regenerates template structures while preserving core tracking files.

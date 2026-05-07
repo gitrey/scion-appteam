@@ -1,0 +1,3 @@
+schema_version: "1"
+description: "appteam secops agent template"
+system_prompt: system-prompt.md

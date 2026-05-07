@@ -31,7 +31,7 @@ Review), `scion-appteam`:
 
 ## 🏗️ Team Architecture & Workflow
 
-The project simulates a complete agile lifecycle through specialized agent personas interacting via defined messaging interfaces and JIRA:
+The project simulates a complete agile lifecycle through specialized agent personas interacting via defined messaging interfaces:
 
 ```mermaid
 graph TD
@@ -45,7 +45,7 @@ graph TD
         TPM -->|6. Populates Backlog| Backlog[("docs/BACKLOG.md")]
     end
     
-    subgraph "Implementation & Verification"
+    subgraph "Implementation & QA Triad"
         TPM -->|7. Assigns Tasks| SWE1["💻 SWE-1"]
         TPM -->|7. Assigns Tasks| SWE2["💻 SWE-2"]
         SWE1 -->|8. Transitions JIRA & Writes Code| Codebase["🛠️ Workspace Code"]
@@ -53,20 +53,27 @@ graph TD
         Codebase -->|9. Verifies Code Quality| Test["🧪 SWE-Test"]
         Codebase -->|9. Verifies Visual Layout| UITest["🎨 ui-test (Chrome DevTools)"]
         Codebase -->|9. Verifies Performance| Perf["⚡ perf-test (Locust)"]
+        Codebase -->|9. Audits Security & Vulns| Sec["🛡️ secops-agent (semgrep)"]
         UITest -->|10. Captures Screenshots| Screenshots[("docs/screenshots/")]
-        Perf -->|10. Generates Reports| PerfReports[("docs/perf-reports/")]
+        Perf -->|10. Generates Load Reports| PerfReports[("docs/perf-reports/")]
+        Sec -->|10. Generates Vuln Reports| SecReports[("docs/security-reports/")]
         Test -->|11. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
         UITest -->|11. Links Screenshots in PR| PR
         Perf -->|11. Links Performance in PR| PR
+        Sec -->|11. Links Security in PR| PR
     end
     
-    subgraph "Quality Assurance & Release"
-        PR -->|12. Reviews PR & Approves| Reviewer["🔍 Reviewer"]
-        Reviewer -->|13. Triggers Deployment| DevOps["🛠️ DevOps Agent"]
-        DevOps -->|14. Provisions & Deploys| GCP[("Google Cloud (Cloud Run/GKE)")]
-        DevOps -->|15. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
-        Release -->|16. Reports Completion| PM
-        PM -->|17. Delivers Summary| User
+    subgraph "Review, Deploy & Observability"
+        PR -->|12. Reviews PR & Comments| Reviewer["🔍 Reviewer"]
+        Reviewer -->|13. Syncs API Specs & Wiki| Doc["📈 doc-agent (OpenAPI)"]
+        Doc -->|14. Updates API Specs| OpenAPI[("docs/api/openapi.yaml")]
+        Reviewer -->|15. Triggers Deployment| DevOps["🛠️ DevOps Agent"]
+        DevOps -->|16. Provisions & Deploys| GCP[("Google Cloud")]
+        DevOps -->|17. Triggers Health Probes| SRE["📊 sre-agent (Observability)"]
+        SRE -->|18. Configures Alerts & Probes| Monitoring[("GCP Cloud Monitoring")]
+        SRE -->|19. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
+        Release -->|20. Reports Completion| PM
+        PM -->|21. Delivers Summary| User
     end
 ```
 
@@ -79,8 +86,11 @@ graph TD
 5. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
 6. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser testing, DOM/CSS inspection, visual verification, and screenshot audits using the Chrome DevTools MCP.
 7. **⚡ Performance Testing Engineer Agent (perf-test)**: Specializes in concurrent traffic simulation (Locust), scalability audits, response time/latency profiling (p50, p95, p99), and performance metrics reporting.
-8. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
-9. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
+8. **🛡️ AppSec & SecOps Agent (secops)**: Specializes in Static Application Security Testing (SAST via `gosec`/`semgrep`), dependency vulnerability audits (SCA via `govulncheck`), and secret scanning.
+9. **📈 Technical Writer Agent (doc)**: Specializes in generating and maintaining OpenAPI/Swagger schemas (`openapi.yaml`), interactive component diagrams (Mermaid), and architectural wikis.
+10. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
+11. **📊 Site Reliability Engineer Agent (sre)**: Specializes in post-deployment liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP alerting policies via Terraform, and documenting SLOs/SLIs.
+12. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
 
 ---
 
@@ -103,6 +113,12 @@ scion-appteam/
 │       │   └── skills/      // DevOps skills (/deploy, /logs)
 │       ├── perf-test/       // Performance Testing Agent configuration, prompt & skills
 │       │   └── skills/      // Performance skills (/locust)
+│       ├── secops/          // AppSec/Security Agent configuration, prompt & skills
+│       │   └── skills/      // Security skills (/audit)
+│       ├── doc/             // Tech Writer Agent configuration, prompt & skills
+│       │   └── skills/      // Documentation skills (/openapi)
+│       ├── sre/             // SRE Agent configuration, prompt & skills
+│       │   └── skills/      // Reliability skills (/health)
 │       └── tpm/             // Technical Product Manager configurations & skills
 ├── docs/                    // Shared documentation & agile tracking
 │   ├── specs/               // Feature specifications & requirements
@@ -110,7 +126,10 @@ scion-appteam/
 │   ├── BACKLOG.md           // Global product backlog
 │   ├── PROGRESS.md          // Active work item status
 │   ├── RELEASENOTES.md      // Completed milestones & version history
-│   └── perf-reports/        // Headless Locust performance HTML reports
+│   ├── perf-reports/        // Headless Locust performance HTML reports
+│   ├── security-reports/    // Gosec and dependency vulnerability JSON logs
+│   ├── reliability/         // Availability, SLO/SLI documentation wikis
+│   └── api/                 // OpenAPI/Swagger specifications (openapi.yaml)
 └── README.md                // Project overview (this file)
 ```
 
@@ -124,6 +143,9 @@ Each agent template is equipped with specialized `/` skills designed to automate
 - **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing ticket descriptions, and refining priorities dynamically.
 - **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser interactions, capturing state screenshots via Chrome DevTools MCP.
 - **`/locust`** (perf-test): Executes headless Locust load tests simulating high concurrent user traffic, profiling response time latencies (p50, p95, p99) non-interactively.
+- **`/audit`** (secops): Automates static code security scans (`gosec`/`semgrep`) and dependency vulnerability analysis (`govulncheck`) non-interactively.
+- **`/openapi`** (doc): Scans implemented paths and models to generate and synchronize OpenAPI schemas (`openapi.yaml`) and visual request sequence maps automatically.
+- **`/health`** (sre): Audits deployed microservice health probes (`/healthz`/`/readyz`) and automatically provisions Cloud Monitoring alert policies via Terraform.
 - **`/deploy`** (devops): Builds container images, provisions GCP infrastructure via Terraform, and deploys microservices to Cloud Run non-interactively.
 - **`/logs`** (devops): Automatically queries and audits application logs from Cloud Run or GKE pods to isolate technical blockers.
 - **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and initiates the structured workflow in dedicated execution panes.

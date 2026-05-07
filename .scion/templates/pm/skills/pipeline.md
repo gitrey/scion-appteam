@@ -18,7 +18,8 @@ User invokes `/pipeline` with a feature description or milestone name.
    - **Task 3+:** SWE — Implement the feature (one task per work item)
    - **Task N:** SWE-Test — Run tests and verify acceptance criteria
    - **Task N+1:** ui-test — Run UI regression and visual tests
-   - **Task N+2:** Reviewer — Code review (if reviewer agent exists)
+   - **Task N+2:** devops — Build containers, provision infra, and deploy to GCP
+   - **Task N+3:** Reviewer — Code review (if reviewer agent exists)
 3. **Spawn agents** — Use the `Agent` tool with `team_name` parameter to launch each agent in its own tmux pane. Always use model `gemini-3.1-flash-lite-preview` for all agents:
    - PM agent (reads `.gemini/agents/pm.md`)
    - TPM agent (reads `.gemini/agents/tpm.md`)
@@ -26,9 +27,10 @@ User invokes `/pipeline` with a feature description or milestone name.
    - SWE-2 agent (reads `.gemini/agents/swe-2.md`)
    - SWE-Test agent (reads `.gemini/agents/swe-test.md`)
    - ui-test agent (reads `.gemini/agents/ui-test.md`)
+   - devops agent (reads `.gemini/agents/devops.md`)
 4. **Assign tasks** — Use `TaskUpdate` with `owner` set to each agent's name
 5. **Follow the mandatory pipeline:**
-   - PO feedback → PM creates spec → TPM creates backlog → SWEs implement → SWE-Test verifies code & ui-test verifies visual UI → Reviewer approves
+   - PO feedback → PM creates spec → TPM creates backlog → SWEs implement → SWE-Test verifies code & ui-test verifies visual UI → Reviewer reviews → devops deploys to GCP
    - docs/BACKLOG.md, docs/PROGRESS.md, and docs/RELEASENOTES.md MUST be updated
 6. **Monitor and coordinate** — Use `SendMessage` to communicate with agents and track progress
 7. **Shutdown gracefully** — Send `shutdown_request` to each agent when all work is complete

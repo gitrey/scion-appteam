@@ -58,10 +58,12 @@ graph TD
     end
     
     subgraph "Quality Assurance & Release"
-        PR -->|12. Reviews, Merges & Closes JIRA| Reviewer["🔍 Reviewer"]
-        Reviewer -->|13. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
-        Release -->|14. Reports Completion| PM
-        PM -->|15. Delivers Summary| User
+        PR -->|12. Reviews PR & Approves| Reviewer["🔍 Reviewer"]
+        Reviewer -->|13. Triggers Deployment| DevOps["🛠️ DevOps Agent"]
+        DevOps -->|14. Provisions & Deploys| GCP[("Google Cloud (Cloud Run/GKE)")]
+        DevOps -->|15. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
+        Release -->|16. Reports Completion| PM
+        PM -->|17. Delivers Summary| User
     end
 ```
 
@@ -73,7 +75,8 @@ graph TD
 4. **💻 Software Engineers (SWE-1 & SWE-2)**: Specialize in direct codebase implementation, resolving requirements according to approved specs on feature branches, and opening PRs via `gh` CLI.
 5. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
 6. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser testing, DOM/CSS inspection, visual verification, and screenshot audits using the Chrome DevTools MCP.
-7. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and merges Pull Requests via `gh` CLI, transitioning corresponding JIRA issues to Done.
+7. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
+8. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
 
 ---
 
@@ -92,6 +95,8 @@ scion-appteam/
 │       ├── swe-test/        // QA/Testing configurations & skills
 │       ├── ui-test/         // UI Test Automation Agent configuration, prompt & skills
 │       │   └── skills/      // UI Test skills (/visual-verify)
+│       ├── devops/          // DevOps Engineer Agent configuration, prompt & skills
+│       │   └── skills/      // DevOps skills (/deploy)
 │       └── tpm/             // Technical Product Manager configurations & skills
 ├── docs/                    // Shared documentation & agile tracking
 │   ├── specs/               // Feature specifications & requirements
@@ -111,6 +116,7 @@ Each agent template is equipped with specialized `/` skills designed to automate
 - **`/story`** (PO): Automates creation of highly-structured JIRA stories and bugs with testable acceptance criteria via the Atlassian MCP server.
 - **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing ticket descriptions, and refining priorities dynamically.
 - **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser interactions, capturing state screenshots via Chrome DevTools MCP.
+- **`/deploy`** (devops): Builds container images, provisions GCP infrastructure via Terraform, and deploys microservices to Cloud Run non-interactively.
 - **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and initiates the structured workflow in dedicated execution panes.
 - **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture Decision Records under `docs/adr/` with standard templates.
 - **`/regenerate`** (PM): Reads project configurations from `.appteam/settings.json` and automatically regenerates template structures while preserving core tracking files.

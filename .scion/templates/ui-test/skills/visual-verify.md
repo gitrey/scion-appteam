@@ -12,11 +12,11 @@ User invokes `/visual-verify` with a target URL and a specification ID (e.g.,
 
 ## Instructions
 
-1. **Launch Browser & Navigate** — Use the native Chrome DevTools MCP `navigate`
-   tool to load the target URL:
+1. **Launch Browser & Navigate** — Use the native Chrome DevTools MCP `navigate` tool to load the target URL, ensuring the `headless` parameter is explicitly set to `true` to avoid opening GUI windows:
    ```json
    {
-     "url": "<target-url>"
+     "url": "<target-url>",
+     "headless": true
    }
    ```
 2. **Audit Baseline State** — Check for initial rendering correctness:

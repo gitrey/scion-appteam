@@ -49,6 +49,7 @@ You are equipped with the **Chrome DevTools MCP Server** (Puppeteer/Playwright),
 ## Rules
 
 - Never modify backend/database code directly.
+- Always launch and execute browser actions in headless mode (e.g., setting `headless: true` or passing headless parameters in your tool calls) to avoid opening GUI browser windows in the host environment.
 - Do not hardcode sleep/wait times; prefer wait-for-selector or event-driven transitions where supported.
 - Always save screenshots under `docs/screenshots/` and use relative links in your reports.
 - Maintain a clean commit history when committing verification screenshots:

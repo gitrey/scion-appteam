@@ -12,10 +12,19 @@ User invokes `/deploy` with a target service name and optional image tag (e.g., 
 ## Instructions
 
 1. **Verify Prerequisites** — Check that local git status is clean and `gcloud` auth is configured.
-2. **Run Local Build** — Ensure the application compiles and tests pass before building the container:
-   ```bash
-   go test ./... -v
-   ```
+2. **Run Local Build** — Ensure the application compiles and tests pass by executing the appropriate test suite for the active stack:
+   - **Go:**
+     ```bash
+     go test ./... -v
+     ```
+   - **Python:**
+     ```bash
+     pytest
+     ```
+   - **Node.js:**
+     ```bash
+     npm test
+     ```
 3. **Build and Push Container Image** — Build the Docker container and push it to Google Artifact Registry (GAR) or Container Registry (GCR):
    ```bash
    docker build -t gcr.io/<project-id>/<service-name>:<tag> .

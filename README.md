@@ -52,9 +52,12 @@ graph TD
         SWE2 -->|8. Transitions JIRA & Writes Code| Codebase
         Codebase -->|9. Verifies Code Quality| Test["🧪 SWE-Test"]
         Codebase -->|9. Verifies Visual Layout| UITest["🎨 ui-test (Chrome DevTools)"]
+        Codebase -->|9. Verifies Performance| Perf["⚡ perf-test (Locust)"]
         UITest -->|10. Captures Screenshots| Screenshots[("docs/screenshots/")]
+        Perf -->|10. Generates Reports| PerfReports[("docs/perf-reports/")]
         Test -->|11. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
         UITest -->|11. Links Screenshots in PR| PR
+        Perf -->|11. Links Performance in PR| PR
     end
     
     subgraph "Quality Assurance & Release"
@@ -75,8 +78,9 @@ graph TD
 4. **💻 Software Engineers (SWE-1 & SWE-2)**: Specialize in direct codebase implementation, resolving requirements according to approved specs on feature branches, and opening PRs via `gh` CLI.
 5. **🧪 Software Engineer Test (SWE-Test)**: Responsible for generating unit, integration, and end-to-end tests to verify acceptance criteria.
 6. **🎨 UI Test Automation Agent (ui-test)**: Specializes in automated browser testing, DOM/CSS inspection, visual verification, and screenshot audits using the Chrome DevTools MCP.
-7. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
-8. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
+7. **⚡ Performance Testing Engineer Agent (perf-test)**: Specializes in concurrent traffic simulation (Locust), scalability audits, response time/latency profiling (p50, p95, p99), and performance metrics reporting.
+8. **🛠️ DevOps Engineer Agent (devops)**: Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
+9. **🔍 Reviewer**: Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
 
 ---
 
@@ -97,13 +101,16 @@ scion-appteam/
 │       │   └── skills/      // UI Test skills (/visual-verify)
 │       ├── devops/          // DevOps Engineer Agent configuration, prompt & skills
 │       │   └── skills/      // DevOps skills (/deploy, /logs)
+│       ├── perf-test/       // Performance Testing Agent configuration, prompt & skills
+│       │   └── skills/      // Performance skills (/locust)
 │       └── tpm/             // Technical Product Manager configurations & skills
 ├── docs/                    // Shared documentation & agile tracking
 │   ├── specs/               // Feature specifications & requirements
 │   ├── adr/                 // Architecture Decision Records
 │   ├── BACKLOG.md           // Global product backlog
 │   ├── PROGRESS.md          // Active work item status
-│   └── RELEASENOTES.md      // Completed milestones & version history
+│   ├── RELEASENOTES.md      // Completed milestones & version history
+│   └── perf-reports/        // Headless Locust performance HTML reports
 └── README.md                // Project overview (this file)
 ```
 
@@ -116,6 +123,7 @@ Each agent template is equipped with specialized `/` skills designed to automate
 - **`/story`** (PO): Automates creation of highly-structured JIRA stories and bugs with testable acceptance criteria via the Atlassian MCP server.
 - **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing ticket descriptions, and refining priorities dynamically.
 - **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser interactions, capturing state screenshots via Chrome DevTools MCP.
+- **`/locust`** (perf-test): Executes headless Locust load tests simulating high concurrent user traffic, profiling response time latencies (p50, p95, p99) non-interactively.
 - **`/deploy`** (devops): Builds container images, provisions GCP infrastructure via Terraform, and deploys microservices to Cloud Run non-interactively.
 - **`/logs`** (devops): Automatically queries and audits application logs from Cloud Run or GKE pods to isolate technical blockers.
 - **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and initiates the structured workflow in dedicated execution panes.

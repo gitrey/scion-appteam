@@ -96,7 +96,7 @@ scion-appteam/
 │       ├── ui-test/         // UI Test Automation Agent configuration, prompt & skills
 │       │   └── skills/      // UI Test skills (/visual-verify)
 │       ├── devops/          // DevOps Engineer Agent configuration, prompt & skills
-│       │   └── skills/      // DevOps skills (/deploy)
+│       │   └── skills/      // DevOps skills (/deploy, /logs)
 │       └── tpm/             // Technical Product Manager configurations & skills
 ├── docs/                    // Shared documentation & agile tracking
 │   ├── specs/               // Feature specifications & requirements
@@ -117,6 +117,7 @@ Each agent template is equipped with specialized `/` skills designed to automate
 - **`/groom`** (PO): Performs comprehensive JIRA backlog grooming, auditing ticket descriptions, and refining priorities dynamically.
 - **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser interactions, capturing state screenshots via Chrome DevTools MCP.
 - **`/deploy`** (devops): Builds container images, provisions GCP infrastructure via Terraform, and deploys microservices to Cloud Run non-interactively.
+- **`/logs`** (devops): Automatically queries and audits application logs from Cloud Run or GKE pods to isolate technical blockers.
 - **`/pipeline`** (PM/TPM/SWE): Spins up the full agent team, creates tasks, and initiates the structured workflow in dedicated execution panes.
 - **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture Decision Records under `docs/adr/` with standard templates.
 - **`/regenerate`** (PM): Reads project configurations from `.appteam/settings.json` and automatically regenerates template structures while preserving core tracking files.

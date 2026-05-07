@@ -50,15 +50,18 @@ graph TD
         TPM -->|7. Assigns Tasks| SWE2["💻 SWE-2"]
         SWE1 -->|8. Transitions JIRA & Writes Code| Codebase["🛠️ Workspace Code"]
         SWE2 -->|8. Transitions JIRA & Writes Code| Codebase
-        Codebase -->|9. Verifies Acceptance Criteria| Test["🧪 SWE-Test"]
-        Test -->|10. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
+        Codebase -->|9. Verifies Code Quality| Test["🧪 SWE-Test"]
+        Codebase -->|9. Verifies Visual Layout| UITest["🎨 ui-test (Chrome DevTools)"]
+        UITest -->|10. Captures Screenshots| Screenshots[("docs/screenshots/")]
+        Test -->|11. Opens PR referencing JIRA ID| PR["GitHub Pull Request"]
+        UITest -->|11. Links Screenshots in PR| PR
     end
     
     subgraph "Quality Assurance & Release"
-        PR -->|11. Reviews, Merges & Closes JIRA| Reviewer["🔍 Reviewer"]
-        Reviewer -->|12. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
-        Release -->|13. Reports Completion| PM
-        PM -->|14. Delivers Summary| User
+        PR -->|12. Reviews, Merges & Closes JIRA| Reviewer["🔍 Reviewer"]
+        Reviewer -->|13. Releases Milestone| Release["📄 docs/RELEASENOTES.md"]
+        Release -->|14. Reports Completion| PM
+        PM -->|15. Delivers Summary| User
     end
 ```
 

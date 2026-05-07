@@ -133,17 +133,17 @@ scion-appteam/
 │       ├── ui-test/         // UI Test Automation Agent configuration, prompt & skills
 │       │   └── skills/      // UI Test skills (/visual-verify)
 │       ├── devops/          // DevOps Engineer Agent configuration, prompt & skills
-│       │   └── skills/      // DevOps skills (/deploy, /logs)
+│       │   └── skills/      // DevOps skills (/deploy, /logs, /cloud-run-basics & references/)
 │       ├── perf-test/       // Performance Testing Agent configuration, prompt & skills
 │       │   └── skills/      // Performance skills (/locust)
 │       ├── secops/          // AppSec/Security Agent configuration, prompt & skills
-│       │   └── skills/      // Security skills (/audit)
+│       │   └── skills/      // Security skills (/audit, /google-cloud-waf-security)
 │       ├── doc/             // Tech Writer Agent configuration, prompt & skills
 │       │   └── skills/      // Documentation skills (/openapi)
 │       ├── sre/             // SRE Agent configuration, prompt & skills
-│       │   └── skills/      // Reliability skills (/health)
+│       │   └── skills/      // Reliability skills (/health, /google-cloud-networking-observability & references/)
 │       ├── db/              // Database & Data Agent configuration, prompt & skills
-│       │   └── skills/      // Database skills (/seed)
+│       │   └── skills/      // Database skills (/seed, /cloud-sql-basics & references/)
 │       └── tpm/             // Technical Product Manager configurations & skills
 ├── db/                      // Database schemas & test data migrations
 │   ├── schema.sql           // Logical DDL relational schema
@@ -179,17 +179,21 @@ common software processes:
 - **`/visual-verify`** (ui-test): Automates end-to-end visual QA and browser interactions, capturing state screenshots via Chrome DevTools MCP.
 - **`/locust`** (perf-test): Executes headless Locust load tests simulating high concurrent user traffic, profiling response time latencies (p50, p95, p99) non-interactively.
 - **`/audit`** (secops): Automates static code security scans (`gosec`/`semgrep`) and dependency vulnerability analysis (`govulncheck`) non-interactively.
+- **`/google-cloud-waf-security`** (secops): Audits GCP environments for secure Least-Privilege IAM, KMS encryption-at-rest, and Cloud Run ingress/egress network rules.
 
 #### **📊 Database & Documentation Skills**
 - **`/seed`** (db): Automates relational database schema design (DDL) and generates rich, interconnected test seed data datasets (DML) non-interactively.
+- **`/cloud-sql-basics`** (db): Provisions Cloud SQL instances, configures HA replicas, maps physical resources to application logical schemas, and manages SQL backups.
 - **`/openapi`** (doc): Scans implemented paths and models to generate and synchronize OpenAPI schemas (`openapi.yaml`) and visual request sequence maps automatically.
 - **`/adr`** (SWE-Test/PM/Reviewer): Automates the creation of Architecture Decision Records under `docs/adr/` with standard templates.
 - **`/release`** (PM): Automates release note aggregation and version tagging upon milestone completion.
 
 #### **🛠️ Infrastructure & Observability Skills**
 - **`/deploy`** (devops): Builds container images, provisions GCP infrastructure via Terraform, and deploys microservices to Cloud Run non-interactively.
+- **`/cloud-run-basics`** (devops): Manages Cloud Run service, Job, and Worker Pool deployments, autoscaling rules, and ensures code listens on `0.0.0.0:$PORT`.
 - **`/logs`** (devops): Automatically queries and audits application logs from Cloud Run or GKE pods to isolate technical blockers.
 - **`/health`** (sre): Audits deployed microservice health probes (`/healthz`/`/readyz`) and automatically provisions Cloud Monitoring alert policies via Terraform.
+- **`/google-cloud-networking-observability`** (sre): Observes Cloud Monitoring metrics, audits VPC Flow Logs, liveness paths, and checks VPC firewall/NAT threat anomalies.
 
 ---
 

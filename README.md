@@ -215,7 +215,7 @@ common software processes:
 
 ### 📦 Import Agent Templates
 
-To import and register all 12 pre-configured specialized agent templates into
+To import and register pre-configured specialized agent templates into
 your active Scion Grove:
 
 1. Open the **Settings** menu for your Scion Grove.

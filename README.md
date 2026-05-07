@@ -167,32 +167,15 @@ Each agent template is equipped with specialized `/` skills designed to automate
 
 ## 🚀 Getting Started
 
-### 1. Initialize the Environment
+### 📦 Import Agent Templates
 
-Set up your Scion workspace:
+To import and register all 12 pre-configured specialized agent templates into your active Scion Grove:
 
-```bash
-scion init
-```
+1. Open the **Settings** menu for your Scion Grove.
+2. Select **Import Templates**.
+3. Provide the repository source URL:
+   ```text
+   https://github.com/gitrey/scion-appteam
+   ```
 
-### 2. Trigger the Pipeline
-
-Spawn the entire autonomous development team with a specific feature target:
-
-```bash
-# Initiates the autonomous agile flow for a new feature
-/pipeline "Implement dark mode support across the application"
-```
-
-### 3. Document Architectural Decisions
-
-To propose a new architectural change:
-
-```bash
-/adr "Use PostgreSQL for order management persistence"
-```
-
----
-
-_Developed with 🦾 using the
-[Scion Framework](https://github.com/gitrey/scion-appteam)._
+Once imported, all roles (PO, PM, TPM, SWEs, QA Triad, DevOps, SRE, and SecOps) will be immediately configured and ready to orchestrate!

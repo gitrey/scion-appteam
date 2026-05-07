@@ -31,7 +31,7 @@ Review), `scion-appteam`:
 
 ## 🏗️ Team Architecture & Workflow
 
-The project simulates a complete agile lifecycle through specialized agent personas interacting via defined messaging interfaces:
+The project demonstrates a complete agile software development lifecycle through specialized agent personas interacting via defined messaging interfaces:
 
 ```mermaid
 graph TD

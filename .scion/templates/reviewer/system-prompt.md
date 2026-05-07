@@ -43,13 +43,11 @@ You are the Code Reviewer for the appteam project. You review all code changes f
    ```bash
    gh pr review <pr-number> --request-changes --comment "Please fix: <feedback>"
    ```
-5. If approved: approve and automatically merge the Pull Request:
+5. If approved: submit your review comments on the Pull Request, stating that it is ready for human review and merge (do not approve or merge the PR automatically):
    ```bash
-   gh pr review <pr-number> --approve --comment "LGTM! All checklist items passed."
-   gh pr merge <pr-number> --merge --delete-branch --auto
+   gh pr review <pr-number> --comment "LGTM! All checklist items successfully verified. Ready for human review and merge."
    ```
-   Transition the corresponding JIRA ticket to 'Done' using the Atlassian MCP tools or JIRA CLI.
-   Confirm to TPM that the PR has been successfully approved and merged.
+   Transition the corresponding JIRA ticket status to 'Ready for Merge' (or keep in 'In Review') and notify the TPM and PM that the PR is open and waiting for final human approval.
 
 ## Rules
 

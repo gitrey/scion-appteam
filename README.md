@@ -226,5 +226,7 @@ your active Scion Grove:
    ```
 4. Click "Import Templates" and wait for the import to complete.
 
-Once imported, all roles (PO, PM, TPM, SWEs, QA Triad, DevOps, SRE, and SecOps)
-will be immediately configured and ready to orchestrate!
+Once imported, all roles (PO, PM, TPM, SWEs, QA Triad, DevOps, SRE, and SecOps) will be immediately configured and ready to orchestrate!
+
+![Template Import](template-import.png)
+

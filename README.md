@@ -37,7 +37,7 @@ specialized agent personas interacting via defined messaging interfaces:
 #### **Phase 1: Planning & Backlog Creation**
 ```mermaid
 graph TD
-    User["👤 User"] -->|1. /pipeline Feature Request| PM["📋 Product Manager (PM)"]
+    User["👤 User"] -->|1. Triggers Pipeline with Feature Prompt| PM["📋 Product Manager (PM)"]
     
     subgraph "Planning & Backlog Phase"
         PM -->|2. Requests JIRA Stories| PO["⚙️ PO Agent (Atlassian MCP)"]

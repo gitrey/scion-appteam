@@ -152,6 +152,7 @@ scion-appteam/
 ├── docs/                    // Shared documentation & agile tracking
 │   ├── specs/               // Feature specifications & requirements
 │   ├── adr/                 // Architecture Decision Records
+│   ├── protocols.md         // Team protocols (Git, Hub, Sync)
 │   ├── BACKLOG.md           // Global product backlog
 │   ├── PROGRESS.md          // Active work item status
 │   ├── RELEASENOTES.md      // Completed milestones & version history

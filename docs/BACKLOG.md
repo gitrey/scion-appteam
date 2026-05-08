@@ -8,3 +8,4 @@
 
 ## Milestone 5 (In Progress)
 - **F-0005** - Address Milestone 4 Retrospective Action Items (GENDEV-101) - P1 - Completed
+- **F-0006** - Introduce HR Agent and Protocol Enforcement (GENDEV-105) - P2 - Completed

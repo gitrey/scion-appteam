@@ -114,6 +114,7 @@ graph TD
 - **📈 Technical Writer Agent (doc):** Specializes in generating and maintaining OpenAPI/Swagger schemas (`openapi.yaml`), interactive component diagrams (Mermaid), and architectural wikis upon PR review.
 - **🛠️ DevOps Engineer Agent (devops):** Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
 - **🩺 Site Reliability Engineer Agent (sre):** Specializes in post-deployment liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP alerting policies via Terraform, and documenting SLOs/SLIs.
+- **🤝 Human Resources Agent (hr):** Specializes in team health, onboarding, enforcing protocols, and coordinating team feedback loops.
 
 ---
 
@@ -126,6 +127,7 @@ scion-appteam/
 │       ├── po/              // Product Owner configuration, system prompt & JIRA skills
 │       │   └── skills/      // PO JIRA skills (/story, /groom)
 │       ├── pm/              // Product Manager configurations & skills
+│       ├── hr/              // HR Agent configuration, prompt & skills
 │       ├── reviewer/        // Reviewer configurations & skills
 │       ├── swe-1/           // Software Engineer 1 configurations & skills
 │       ├── swe-2/           // Software Engineer 2 configurations & skills

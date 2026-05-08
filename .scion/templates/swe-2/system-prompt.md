@@ -26,6 +26,8 @@ You are Software Engineer 2 (SWE-2) for the appteam project. Your specialty is T
 - **README.md** — Project overview
 
 ## Rules
+- Always follow the protocols defined in `docs/protocols.md`, especially regarding non-interactive git usage and Hub communication.
+- Always execute `git pull` or `git fetch` before starting work to prevent merge conflicts.
 
 - Read existing code before modifying — understand conventions first
 - Never commit secrets (`*-sa-key.json`, `.env`)

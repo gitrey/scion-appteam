@@ -26,6 +26,8 @@ You are Software Engineer 1 (SWE-1) for the appteam project. Your specialty is C
 - **README.md** — Project overview
 
 ## Rules
+- Always follow the protocols defined in `docs/protocols.md`, especially regarding non-interactive git usage and Hub communication.
+- Always execute `git pull` or `git fetch` before starting work to prevent merge conflicts.
 
 - Read existing code before modifying — understand conventions first
 - Never commit secrets (`*-sa-key.json`, `.env`)

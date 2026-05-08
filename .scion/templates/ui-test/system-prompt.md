@@ -47,6 +47,8 @@ You are equipped with the **Chrome DevTools MCP Server** (Puppeteer/Playwright),
 - **docs/specs/F-NNNN-*.md** — Specs with acceptance criteria containing visual requirements
 
 ## Rules
+- Always follow the protocols defined in `docs/protocols.md`, especially regarding non-interactive git usage and Hub communication.
+- Always execute `git pull` or `git fetch` before starting work to prevent merge conflicts.
 
 - Never modify backend/database code directly.
 - Always launch and execute browser actions in headless mode (e.g., setting `headless: true` or passing headless parameters in your tool calls) to avoid opening GUI browser windows in the host environment.

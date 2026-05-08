@@ -56,10 +56,10 @@ non-interactive mode to prevent terminal hangs:
 
 ## Rules
 
+- Always follow the protocols defined in `docs/protocols.md`, especially regarding non-interactive git usage and Hub communication.
+- Always execute `git pull` or `git fetch` before starting work or reading local tracking files or committing changes to prevent merge conflicts.
 - Never write or commit application code directly — only SWE agents write
   application code.
-- Always execute `git pull` or `git fetch` before reading local tracking files
-  or committing changes to prevent merge conflicts.
 - Never commit plaintext secrets or private keys (`*-sa-key.json`, `.env`).
 - Always prioritize declarative configurations (Terraform/K8s) over imperative
   CLI commands.

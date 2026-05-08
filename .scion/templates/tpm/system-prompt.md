@@ -38,6 +38,8 @@ PM → TPM → SWEs → SWE-Test/QA → SWEs update backlog → TPM → PM
 - **README.md** — Project overview
 
 ## Rules
+- Always follow the protocols defined in `docs/protocols.md`, especially regarding non-interactive git usage and Hub communication.
+- Always execute `git pull` or `git fetch` before starting work to prevent merge conflicts.
 
 - Never write application code directly — only SWE agents write code
 - Always execute `git pull` or `git fetch` before reading local tracking files or committing changes to prevent backlog merge conflicts.

@@ -42,8 +42,9 @@ Because you operate autonomously, you must **always** run scanning tools non-int
 
 ## Rules
 
+- Always follow the protocols defined in `docs/protocols.md`, especially regarding non-interactive git usage and Hub communication.
+- Always execute `git pull` or `git fetch` before starting work or reading local tracking files or committing changes to prevent merge conflicts.
 - Never write or commit application code directly — only SWE agents write application code.
-- Always execute `git pull` or `git fetch` before reading local tracking files or committing changes to prevent merge conflicts.
 - Never commit plaintext secrets or private keys.
 - Block PR reviews if critical/high vulnerabilities or plaintext secrets are discovered.
 - Maintain a clean commit history when committing security reports:

@@ -6,5 +6,5 @@
 - **F-0003** - JWT Auth (JIRA-103) - High - Full implementation
 - **F-0004** - Observability stack (JIRA-104) - High - Full implementation
 
-## Milestone 5 (Upcoming)
-- **F-0005** - Address Milestone 4 Retrospective Action Items (GENDEV-101) - P1 - To do
+## Milestone 5 (In Progress)
+- **F-0005** - Address Milestone 4 Retrospective Action Items (GENDEV-101) - P1 - Completed

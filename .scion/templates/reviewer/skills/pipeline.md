@@ -35,7 +35,7 @@ User invokes `/pipeline` with a feature description or milestone name.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent
 - **Model:** `gemini-3.1-flash-lite-preview`
 - **Agent definitions:** `.gemini/agents/`
 - **Pipeline diagram:** `docs/PIPELINE.md`

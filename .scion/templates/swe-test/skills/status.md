@@ -35,6 +35,6 @@ User invokes `/status` to get a summary of the current milestone.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent
 - **Backlog:** `docs/BACKLOG.md`
 - **Progress log:** `docs/PROGRESS.md`

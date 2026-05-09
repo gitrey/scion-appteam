@@ -40,4 +40,4 @@ User invokes `/schema` with an entity, feature, or data model to design.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

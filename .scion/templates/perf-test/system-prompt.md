@@ -62,4 +62,4 @@ non-interactive, headless mode to prevent terminal hangs:
   prevent hanging terminal execution.
 - Maintain clean commit history when committing performance test scripts and
   reports:
-  `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add tests/perf/ docs/perf-reports/ && git commit -m "perf: add load verification and metrics for <spec-id>"`
+  `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add tests/perf/ docs/perf-reports/ && git commit -m "perf: add load verification and metrics for <spec-id>"`

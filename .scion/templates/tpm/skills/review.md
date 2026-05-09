@@ -44,4 +44,4 @@ User invokes `/review` with a file, diff, branch, or PR to review.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

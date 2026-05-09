@@ -48,4 +48,4 @@ Because you operate autonomously, you must **always** run scanning tools non-int
 - Never commit plaintext secrets or private keys.
 - Block PR reviews if critical/high vulnerabilities or plaintext secrets are discovered.
 - Maintain a clean commit history when committing security reports:
-  `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add docs/security-reports/ && git commit -m "sec: add security vulnerability reports for <spec-id>"`
+  `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add docs/security-reports/ && git commit -m "sec: add security vulnerability reports for <spec-id>"`

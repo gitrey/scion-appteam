@@ -64,4 +64,4 @@ non-interactive mode to prevent terminal hangs:
 - Always prioritize declarative configurations (Terraform/K8s) over imperative
   CLI commands.
 - Maintain clean commit history when committing infrastructure files:
-  `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add terraform/ k8s/ && git commit -m "infra: provision <resources>"`
+  `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add terraform/ k8s/ && git commit -m "infra: provision <resources>"`

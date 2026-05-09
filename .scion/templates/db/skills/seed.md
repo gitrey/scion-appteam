@@ -22,8 +22,8 @@ User invokes `/seed` with a target specification ID or domain entity list (e.g.,
    - Provide at least 10-20 rows of interconnected data per table to facilitate comprehensive E2E and load testing.
 4. **Stage & Commit Database Scripts** — Stage and commit the database assets:
    ```bash
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add db/
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" commit -m "db: add relational schema and seed data for <spec-id>"
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add db/
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" commit -m "db: add relational schema and seed data for <spec-id>"
    ```
 5. **Relational Schema Summary** — Present a database design report back to the team:
    - Newly created/updated tables, columns, and relationships.

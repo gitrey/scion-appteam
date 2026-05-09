@@ -53,8 +53,8 @@ User invokes `/audit` with a specification ID to verify a feature's security (e.
    - **Ensure `.env` and private keys are listed in `.gitignore`.**
 4. **Groom & Commit Security Reports** — Stage and commit the generated vulnerability logs:
    ```bash
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add docs/security-reports/
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" commit -m "sec: add security and vulnerability audit reports for <spec-id>"
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add docs/security-reports/
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" commit -m "sec: add security and vulnerability audit reports for <spec-id>"
    ```
 5. **Deliver Security Summary** — Present a clear security audit report back to the team:
    - Total vulnerabilities found (categorized by Critical, High, Medium, Low).

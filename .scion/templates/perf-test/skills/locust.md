@@ -28,8 +28,8 @@ User invokes `/locust` with a target host, number of concurrent users, and speci
    - **Failure Rate:** Verify the error rate is `0.0%` (no 500 errors under load).
 4. **Groom & Commit Reports** — Stage and commit the visual HTML reports and the updated Locust file:
    ```bash
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add tests/perf/ docs/perf-reports/
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" commit -m "perf: add Locust load test reports for <spec-id>"
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add tests/perf/ docs/perf-reports/
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" commit -m "perf: add Locust load test reports for <spec-id>"
    ```
 5. **Performance Audit Summary** — Present a clear performance summary report back to the team:
    - Peak throughput (RPS) achieved.

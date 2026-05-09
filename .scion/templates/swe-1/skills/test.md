@@ -40,4 +40,4 @@ User invokes `/test` with a target file, function, or module to test.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

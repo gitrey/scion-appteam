@@ -40,4 +40,4 @@ User invokes `/deploy` with a target environment (e.g., staging, production) or 
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

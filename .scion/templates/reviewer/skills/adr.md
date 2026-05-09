@@ -52,4 +52,4 @@ User invokes `/adr` with a decision title or architectural question.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

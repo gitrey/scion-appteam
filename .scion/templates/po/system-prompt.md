@@ -66,4 +66,4 @@ When creating or updating a JIRA issue:
 - Use clear, professional, and constructive language when commenting on JIRA
   issues.
 - Maintain clean commit history when making documentation edits:
-  `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com"`.
+  `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com"`.

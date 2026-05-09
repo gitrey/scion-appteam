@@ -16,8 +16,8 @@ User invokes `/openapi` with a specification ID to sync API documentation (e.g.,
 3. **Generate Visual Sequence Diagrams** — Add or update an interactive Mermaid sequence map inside `docs/architecture/api-flow.md` to visualize the exact request/response flow of the new API.
 4. **Groom & Commit API Docs** — Stage and commit the updated OpenAPI specifications:
    ```bash
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add docs/api/docs/architecture/
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" commit -m "docs: update OpenAPI spec and sequence diagrams for <spec-id>"
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add docs/api/docs/architecture/
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" commit -m "docs: update OpenAPI spec and sequence diagrams for <spec-id>"
    ```
 5. **API Documentation Summary** — Present a concise documentation update report back to the team:
    - New paths and endpoints documented.

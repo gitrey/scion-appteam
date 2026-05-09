@@ -49,4 +49,4 @@ PM → TPM → SWEs → SWE-Test/QA → SWEs update backlog → TPM → PM
 - Use feature branches (`feature/<name>`) for all non-trivial work
 - Use `SendMessage` to coordinate with all agents
 - All commits must include `Co-Authored-By: Gemini <noreply@google.com>`
-- Use `git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com"` for all commits
+- Use `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com"` for all commits

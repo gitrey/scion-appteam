@@ -36,8 +36,8 @@ User invokes `/visual-verify` with a target URL and a specification ID (e.g.,
 6. **Groom & Commit Screenshots** — Stage and commit the captured verification
    screenshots:
    ```bash
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add docs/screenshots/
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" commit -m "test(ui): add visual verification screenshots for <spec-id>"
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add docs/screenshots/
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" commit -m "test(ui): add visual verification screenshots for <spec-id>"
    ```
 7. **Verification Report Summary** — Present a concise visual QA report back to
    the user:

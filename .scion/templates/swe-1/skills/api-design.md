@@ -41,4 +41,4 @@ User invokes `/api-design` with a resource name or feature that needs an API.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

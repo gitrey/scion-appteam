@@ -30,4 +30,4 @@ User invokes `/debug` with a bug description, error message, or unexpected behav
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

@@ -46,5 +46,5 @@ User invokes `/standup` to generate a daily standup summary.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent
 - **Backlog:** `docs/BACKLOG.md`

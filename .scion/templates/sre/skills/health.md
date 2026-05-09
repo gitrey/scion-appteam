@@ -25,8 +25,8 @@ User invokes `/health` with a target service host and specification ID (e.g., `/
    ```
 4. **Groom & Commit Monitoring Assets** — Stage and commit the updated alerting policies:
    ```bash
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" add terraform/monitoring/
-   git -c user.name="Andrey Shakirov" -c user.email="andreyshakirov@google.com" commit -m "sre: add Uptime Checks and Alerting Policies for <spec-id>"
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add terraform/monitoring/
+   git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" commit -m "sre: add Uptime Checks and Alerting Policies for <spec-id>"
    ```
 5. **Reliability Summary** — Present a concise post-deployment health report:
    - Active liveness/readiness probe status (UP/DOWN).

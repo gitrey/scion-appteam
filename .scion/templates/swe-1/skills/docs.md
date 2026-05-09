@@ -28,4 +28,4 @@ User invokes `/docs` with a target module, API, feature, or file to document.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent

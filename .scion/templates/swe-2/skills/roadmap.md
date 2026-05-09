@@ -33,5 +33,5 @@ User invokes `/roadmap` with a feature idea or description.
 ## Project Context
 
 - **Project:** appteam
-- **Owner:** Andrey Shakirov (andreyshakirov@google.com)
+- **Owner:** Scion Agent
 - **Backlog:** `docs/BACKLOG.md`

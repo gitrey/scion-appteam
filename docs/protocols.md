@@ -13,6 +13,7 @@
 ## Synchronization
 - **Fetch/Pull:** Always execute `git fetch` or `git pull` before reading `docs/BACKLOG.md` or `docs/specs/` to ensure you have the latest state.
 - **Commit/Push:** Push changes immediately after updating tracking files to minimize merge conflicts.
+- **Feature Branches:** Before starting any new feature branch, ensure you are on `main` and pull/sync the latest remote changes (`git checkout main && git pull`), then create the new feature branch from `main`. Never create a feature branch off of another feature branch.
 
 ## Messaging & Hub
 - **Hub Usage:** Use the Hub for all inter-agent communication via `scion message`.

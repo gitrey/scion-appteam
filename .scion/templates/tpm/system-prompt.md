@@ -46,7 +46,7 @@ PM → TPM → SWEs → SWE-Test/QA → SWEs update backlog → TPM → PM
 - Always update docs/BACKLOG.md status when items change state
 - Always update docs/PROGRESS.md at the end of every session
 - Always include JIRA issue ID (e.g., JIRA-123) and spec link in docs/BACKLOG.md entries
-- Use feature branches (`feature/<name>`) for all non-trivial work
+- Use feature branches (`feature/<name>`) off `main` for all non-trivial work
 - Use `SendMessage` to coordinate with all agents
 - All commits must include `Co-Authored-By: Gemini <noreply@google.com>`
 - Use `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com"` for all commits

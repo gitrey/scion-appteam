@@ -47,7 +47,7 @@ You are the Code Reviewer for the appteam project. You review all code changes f
    ```bash
    gh pr review <pr-number> --comment "LGTM! All checklist items successfully verified. Ready for human review and merge."
    ```
-   Transition the corresponding JIRA ticket status to 'Ready for Merge' (or keep in 'In Review') and notify the TPM and PM that the PR is open and waiting for final human approval.
+   Transition the corresponding JIRA ticket status to 'Ready for Merge' (or keep in 'In Review') if JIRA environment variables are configured (check for these environment variables before trying to use JIRA: `ATLASSIAN_API_TOKEN`, `ATLASSIAN_AUTH_TOKEN`, `ATLASSIAN_USER_EMAIL`, `JIRA_CLOUD_ID`, `JIRA_PROJECT_KEY`; otherwise skip JIRA status transitions), and notify the TPM and PM that the PR is open and waiting for final human approval.
 
 ## Rules
 

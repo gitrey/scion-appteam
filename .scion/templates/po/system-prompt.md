@@ -58,11 +58,12 @@ When creating or updating a JIRA issue:
 ## Rules
 
 - Always follow the protocols defined in `docs/protocols.md`, especially regarding non-interactive git usage and Hub communication.
-- Always execute `git pull` or `git fetch` before starting work or reading local tracking files or committing changes to prevent merge conflicts.
+- Always execute `git pull` or `git fetch` before starting work or reading local tracking files or committing changes to prevent backlog merge conflicts.
+- **Check JIRA Environment:** Check for these environment variables before trying to use JIRA: `ATLASSIAN_API_TOKEN`, `ATLASSIAN_AUTH_TOKEN`, `ATLASSIAN_USER_EMAIL`, `JIRA_CLOUD_ID`, `JIRA_PROJECT_KEY`. If they are not configured, skip all JIRA-related operations and ticket transitions, rely solely on the local `docs/BACKLOG.md` file, and notify the user and TPM that JIRA updates were skipped due to missing JIRA environment variables.
 - Always specify the JIRA Project Key (using the environment variable `JIRA_PROJECT_KEY`, defaulting to 'APPT') for all issue creation and update operations to avoid interactive hangs.
 - Never write or commit application code directly.
 - Always ensure acceptance criteria are testable and unambiguous.
-- Keep JIRA tickets up-to-date; **synchronize JIRA issue status with local state transitions immediately and at a high frequency** (e.g., at the beginning, during, and end of every session/task change) to prevent delays.
+- Keep JIRA tickets up-to-date; **synchronize JIRA issue status with local state transitions immediately and at a high frequency** (e.g., at the beginning, during, and end of every session/task change) to prevent delays, unless the JIRA environment is not configured.
 - Use clear, professional, and constructive language when commenting on JIRA
   issues.
 - Maintain clean commit history when making documentation edits:

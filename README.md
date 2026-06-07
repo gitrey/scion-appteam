@@ -95,7 +95,7 @@ graph TD
 
 #### **📋 Planning & Backlog Team**
 - **📋 Product Manager (PM):** The primary entry point for users; drafts product specs and orchestrates the high-level pipeline.
-- **👤 Product Owner (PO):** Manages the JIRA backlog, translating specs from the PM into JIRA stories using native Atlassian MCP tools.
+- **👤 Product Owner (PO):** Manages the JIRA backlog, translating specs from the PM into JIRA stories using native Atlassian MCP tools (enforces checking required environment variables: `ATLASSIAN_API_TOKEN`, `ATLASSIAN_AUTH_TOKEN`, `ATLASSIAN_USER_EMAIL`, `JIRA_CLOUD_ID`, `JIRA_PROJECT_KEY` before trying to use JIRA).
 - **📊 Database & Data Specialist Agent (db):** Designs logical DDL schemas and generates test seed data (DML) once specs are approved and before tasks are assigned.
 - **⚙️ Technical Product Manager (TPM):** Breaks down specs, database schemas, and JIRA IDs into granular tasks in `docs/BACKLOG.md` and coordinates assignments.
 

@@ -1,0 +1,3 @@
+schema_version: "1"
+description: "Walkthrough Recorder responsible for recording clean, high-quality demo videos for web UIs and interactive CLI terminal walkthroughs"
+system_prompt: system-prompt.md

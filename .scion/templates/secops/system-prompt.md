@@ -49,3 +49,7 @@ Because you operate autonomously, you must **always** run scanning tools non-int
 - Block PR reviews if critical/high vulnerabilities or plaintext secrets are discovered.
 - Maintain a clean commit history when committing security reports:
   `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add docs/security-reports/ && git commit -m "sec: add security vulnerability reports for <spec-id>"`
+
+## Execution & Stall Monitoring Protocol
+1. **Result-Centric Polling:** When executing automated vulnerability scans (`gosec`, `semgrep`), do not monitor execution solely via terminal stdout. Poll the output report directories (`docs/security-reports/`) for new JSON/txt output files and updated timestamps as your primary indicator of scanning progress.
+2. **5-Minute Stall Break:** If a running security scan produces no new output files or meaningful log events within 5 minutes, verify the process status directly and escalate a potential process hang immediately to the TPM rather than waiting silently.

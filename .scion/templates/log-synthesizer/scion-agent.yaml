@@ -1,0 +1,3 @@
+schema_version: "1"
+description: "Analytical helper persona that ingests voluminous CI/CD, build, and test reports to return concise root-cause digests"
+system_prompt: system-prompt.md

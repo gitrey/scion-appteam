@@ -63,3 +63,7 @@ non-interactive, headless mode to prevent terminal hangs:
 - Maintain clean commit history when committing performance test scripts and
   reports:
   `git -c user.name="Scion Agent" -c user.email="scion@users.noreply.github.com" add tests/perf/ docs/perf-reports/ && git commit -m "perf: add load verification and metrics for <spec-id>"`
+
+## Execution & Stall Monitoring Protocol
+1. **Result-Centric Polling:** When executing Locust load runs, do not track execution solely via terminal stdout. Poll the output report directories (`docs/perf-reports/`, CSV logs) for newly created files and updating timestamps as your definitive proof of execution progress.
+2. **5-Minute Stall Break:** If an executed Locust run produces no new output files or meaningful log events within 5 minutes, verify the underlying process status (`ps`, process exit code) and escalate a potential process stall immediately to the TPM rather than waiting in an infinite loop.

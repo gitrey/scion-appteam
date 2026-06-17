@@ -116,6 +116,11 @@ graph TD
 - **🩺 Site Reliability Engineer Agent (sre):** Specializes in post-deployment liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP alerting policies via Terraform, and documenting SLOs/SLIs.
 - **🤝 Human Resources Agent (hr):** Specializes in team health, onboarding, enforcing protocols, and coordinating team feedback loops.
 
+#### **🎯 Advanced Orchestration & Continuity Roles**
+- **📋 Engineering Manager / Pod Coach (pod-coach):** Enforces gated production check-ins, inspects compiled file outputs, and tracks team bottlenecks in `docs/pod-friction-log.md`.
+- **🔍 Continuity Auditor (continuity-auditor):** Rigorously audits captured screenshots against design systems (Figma/tokens) and audits pull requests against approved DDD architectural boundaries.
+- **📊 Log Synthesizer (log-synthesizer):** Ephemeral analytical helper that ingests massive logs, test suites, or JSON vulnerability scans to return high-signal root-cause digests.
+
 ---
 
 ## 📂 Project Structure
@@ -146,7 +151,10 @@ scion-appteam/
 │       │   └── skills/      // Reliability skills (/health, /google-cloud-networking-observability & references/)
 │       ├── db/              // Database & Data Agent configuration, prompt & skills
 │       │   └── skills/      // Database skills (/seed, /cloud-sql-basics & references/)
-│       └── tpm/             // Technical Product Manager configurations & skills
+│       ├── tpm/             // Technical Product Manager configurations & skills
+│       ├── pod-coach/       // [NEW] Engineering Manager / Pod Coach configuration & system prompt
+│       ├── log-synthesizer/ // [NEW] Context Window Protection helper configuration & system prompt
+│       └── continuity-auditor/ // [NEW] Design System & Architecture continuity auditor
 ├── db/                      // Database schemas & test data migrations
 │   ├── schema.sql           // Logical DDL relational schema
 │   ├── data.sql             // Relational DML test seed dataset

@@ -1,3 +1,3 @@
 schema_version: "1"
-description: "appteam perf-test agent template"
+description: "Performance Testing Agent executing automated Locust load tests and generating latency/throughput reports"
 system_prompt: system-prompt.md

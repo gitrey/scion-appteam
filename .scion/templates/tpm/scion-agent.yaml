@@ -1,3 +1,3 @@
 schema_version: "1"
-description: "appteam tpm agent template"
+description: "Technical Program Manager (TPM) coordinating parallel execution, managing the backlog, and tracking dependencies"
 system_prompt: system-prompt.md

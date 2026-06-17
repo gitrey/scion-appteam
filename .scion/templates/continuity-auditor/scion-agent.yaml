@@ -1,0 +1,3 @@
+schema_version: "1"
+description: "Master visual and architectural continuity auditor verifying exact Design System and DDD specification compliance"
+system_prompt: system-prompt.md

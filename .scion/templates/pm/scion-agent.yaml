@@ -1,3 +1,3 @@
 schema_version: "1"
-description: "appteam pm agent template"
+description: "Product Manager (PM) acting as the primary bridge between Product Owner feedback and detailed product specifications"
 system_prompt: system-prompt.md

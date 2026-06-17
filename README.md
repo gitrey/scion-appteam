@@ -112,9 +112,15 @@ graph TD
 #### **🚀 Review, Release & Operations Team**
 - **🔍 Reviewer:** Performs comprehensive code reviews, grants approvals, and reviews Pull Requests via `gh` CLI, leaving final merges for human engineers.
 - **📈 Technical Writer Agent (doc):** Specializes in generating and maintaining OpenAPI/Swagger schemas (`openapi.yaml`), interactive component diagrams (Mermaid), and architectural wikis upon PR review.
+- **🎥 Walkthrough & Demo Recorder (walkthrough-recorder):** Specializes in recording high-quality demo videos for web UIs and interactive CLI walkthroughs using browser automation and simulated terminals.
 - **🛠️ DevOps Engineer Agent (devops):** Specializes in declarative infrastructure provisioning (Terraform), container orchestration (Kubernetes YAML), and secure automated cloud deployments (using `gcloud` to Cloud Run).
 - **🩺 Site Reliability Engineer Agent (sre):** Specializes in post-deployment liveness/readiness HTTP audits (`/healthz`, `/readyz`), provisioning GCP alerting policies via Terraform, and documenting SLOs/SLIs.
 - **🤝 Human Resources Agent (hr):** Specializes in team health, onboarding, enforcing protocols, and coordinating team feedback loops.
+
+#### **🎯 Advanced Orchestration & Continuity Roles**
+- **📋 Engineering Manager / Pod Coach (pod-coach):** Enforces gated production check-ins, inspects compiled file outputs, and tracks team bottlenecks in `docs/pod-friction-log.md`.
+- **🔍 Continuity Auditor (continuity-auditor):** Rigorously audits captured screenshots against design systems (Figma/tokens) and audits pull requests against approved DDD architectural boundaries.
+- **📊 Log Synthesizer (log-synthesizer):** Ephemeral analytical helper that ingests massive logs, test suites, or JSON vulnerability scans to return high-signal root-cause digests.
 
 ---
 
@@ -146,7 +152,11 @@ scion-appteam/
 │       │   └── skills/      // Reliability skills (/health, /google-cloud-networking-observability & references/)
 │       ├── db/              // Database & Data Agent configuration, prompt & skills
 │       │   └── skills/      // Database skills (/seed, /cloud-sql-basics & references/)
-│       └── tpm/             // Technical Product Manager configurations & skills
+│       ├── tpm/             // Technical Product Manager configurations & skills
+│       ├── pod-coach/       // [NEW] Engineering Manager / Pod Coach configuration & system prompt
+│       ├── log-synthesizer/ // [NEW] Context Window Protection helper configuration & system prompt
+│       ├── walkthrough-recorder/ // [NEW] Walkthrough & Demo Recorder configuration & system prompt
+│       └── continuity-auditor/ // [NEW] Design System & Architecture continuity auditor
 ├── db/                      // Database schemas & test data migrations
 │   ├── schema.sql           // Logical DDL relational schema
 │   ├── data.sql             // Relational DML test seed dataset
